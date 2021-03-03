@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="564.0" prefWidth="1101.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+    <children>
+        <Pane prefHeight="575.0" prefWidth="429.0" style="-fx-background-color: #696969;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="75.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/Logo.1.png" />
+                    </image>
+                </ImageView>
+                <Label alignment="CENTER" layoutX="140.0" layoutY="54.0" prefHeight="23.0" prefWidth="173.0" text="Help Desk" textFill="WHITE">
+                    <font>
+                        <Font name="Segoe UI" size="18.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="148.0" layoutY="77.0" prefHeight="23.0" prefWidth="162.0" text="you're young as you think" textFill="WHITE">
+                    <font>
+                        <Font name="Segoe UI" size="12.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtFirstname" layoutX="75.0" layoutY="122.0" prefHeight="32.0" prefWidth="278.0" promptText="firstname" />
+                <TextField fx:id="txtLastname" layoutX="75.0" layoutY="167.0" prefHeight="32.0" prefWidth="278.0" promptText="lastname" />
+                <TextField fx:id="txtEmail" layoutX="75.0" layoutY="214.0" prefHeight="32.0" prefWidth="278.0" promptText="email" />
+                <DatePicker fx:id="txtDOB" layoutX="75.0" layoutY="351.0" prefHeight="32.0" prefWidth="278.0" promptText="dob" />
+                <Button fx:id="btnSave" layoutX="75.0" layoutY="449.0" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefHeight="27.0" prefWidth="278.0" styleClass="button2" stylesheets="@../styling/fullpackstyling.css" text="Save" />
+                <ComboBox fx:id="txtStatus" editable="true" layoutX="75.0" layoutY="399.0" prefHeight="32.0" prefWidth="278.0" promptText="gender">
+                </ComboBox>
+            <TextField fx:id="txtTelephone" layoutX="75.0" layoutY="306.0" prefHeight="32.0" prefWidth="278.0" promptText="telephone" />
+            <TextField fx:id="txtMdp" layoutX="75.0" layoutY="258.0" prefHeight="32.0" prefWidth="278.0" promptText="mdp" />
+            <Button fx:id="btnDelet" layoutX="76.0" layoutY="523.0" mnemonicParsing="false" onAction="#deletedata" onMouseClicked="#HandleEventsDelete" prefHeight="27.0" prefWidth="278.0" styleClass="button2" stylesheets="@../styling/fullpackstyling.css" text="Delete" />
+            <Button fx:id="btnUpdate" layoutX="76.0" layoutY="485.0" mnemonicParsing="false" onAction="#Update" onMouseClicked="#HandleEvents" prefHeight="23.0" prefWidth="278.0" styleClass="button2" stylesheets="@../styling/fullpackstyling.css" text="Update" />
+            </children>
+        </Pane>
+        <Label fx:id="lblStatus" layoutX="438.0" layoutY="26.0" prefHeight="32.0" prefWidth="354.0" text="Status :" />
+      <TableView fx:id="tblData" layoutX="438.0" layoutY="82.0" prefHeight="478.0" prefWidth="658.0" />
+    </children>
+</AnchorPane>
