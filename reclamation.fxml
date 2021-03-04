@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="Ajouter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="743.0" style="-fx-background-color: #98AFC7;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<children>
+    <Button fx:id="Buttonid" contentDisplay="BOTTOM" layoutX="496.0" layoutY="103.0" mnemonicParsing="false" onAction="#AjouterRec" prefHeight="35.0" prefWidth="79.0" text="Ajouter" />
+    <TextField fx:id="tfréclamation" layoutX="124.0" layoutY="98.0" prefHeight="44.0" prefWidth="353.0" />
+    <TableView fx:id="Reclamations" layoutX="23.0" layoutY="157.0" prefHeight="264.0" prefWidth="584.0" />
+    <Label fx:id="champs" layoutX="124.0" layoutY="74.0" prefHeight="17.0" prefWidth="136.0" text="Votre réclamation" />
+      <Label layoutX="260.0" layoutY="14.0" prefHeight="51.0" prefWidth="275.0" text="Reclamation">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Button fx:id="Annuler" cancelButton="true" layoutX="650.0" layoutY="386.0" mnemonicParsing="false"  prefHeight="35.0" prefWidth="79.0" text="Annuler" />
+      <ScrollBar layoutX="589.0" layoutY="183.0" orientation="VERTICAL" prefHeight="238.0" prefWidth="15.0" />
+</children>
+
+</Pane>
