@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="534.0" prefWidth="753.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FXMLEvaluationController">
+   <children>
+      <VBox layoutX="20.0" layoutY="51.0" prefHeight="238.0" prefWidth="150.0" spacing="20.0">
+         <children>
+            <Label text="ID">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" text="Categorie">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="60.0" text="Fichier">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="127.0" layoutY="57.0" prefHeight="211.0" prefWidth="150.0" spacing="20.0">
+         <children>
+            <TextField fx:id="tfid" onAction="#initialize" />
+            <TextField fx:id="tfcat" layoutX="10.0" layoutY="10.0" onAction="#initialize" />
+            <Button mnemonicParsing="false" text="Upload" />
+         </children>
+      </VBox>
+      <HBox prefHeight="57.0" prefWidth="753.0">
+         <children>
+            <MenuBar prefHeight="25.0" prefWidth="753.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </HBox>
+      <TableView fx:id="tv" layoutX="293.0" layoutY="40.0" prefHeight="477.0" prefWidth="445.0">
+        <columns>
+          <TableColumn fx:id="culid" prefWidth="61.0" text="ID" />
+          <TableColumn fx:id="culcat" prefWidth="156.0" text="Categorie" />
+            <TableColumn fx:id="culf" prefWidth="109.0" text="Fichier" />
+            <TableColumn fx:id="culdate" prefWidth="116.0" text="Date_Creation" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnajout" layoutX="20.0" layoutY="346.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Ajouter" />
+      <Button fx:id="btnmodifier" layoutX="101.0" layoutY="346.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Modifier" />
+      <Button fx:id="btnsupp" layoutX="176.0" layoutY="344.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Supprimer" />
+   </children>
+</AnchorPane>
