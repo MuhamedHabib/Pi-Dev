@@ -1,40 +1,33 @@
-package sample;
 
-import Entities.Reclamation;
-import Service.ServiceReclamation;
+package HelpDesk;
+
 import javafx.application.Application;
-
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
-import java.awt.event.MouseEvent;
-import java.io.IOException;
-import java.security.Provider;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
-
+/**
+ *
+ * @author ComputerT
+ */
 public class Main extends Application {
-
+    
     @Override
-    public void start(Stage Stage) throws Exception {
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("FXML.fxml"));
+        
+        Scene scene = new Scene(root);
+        
+        stage.setScene(scene);
+        stage.show();
+    }
 
-        Parent root = FXMLLoader.load(getClass().getResource("reclamation.fxml"));
-        Stage.setTitle("Reclamation");
-        Stage.setScene(new Scene(root, 750, 550));
-        Stage.show();
-        }
-
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
         launch(args);
-
     }
+    
 }
