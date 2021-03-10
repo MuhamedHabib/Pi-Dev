@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="602.0" prefWidth="1093.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GestionUserController">
+   <children>
+      <Pane layoutX="-10.0" prefHeight="602.0" prefWidth="413.0" style="-fx-background-color: #696969;">
+         <children>
+            <ImageView fitHeight="69.0" fitWidth="109.0" layoutX="75.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Logo.1.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="140.0" layoutY="54.0" prefHeight="23.0" prefWidth="173.0" text="Help Desk" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="148.0" layoutY="77.0" prefHeight="23.0" prefWidth="162.0" text="you're young as you think" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFirstname" layoutX="75.0" layoutY="132.0" prefHeight="32.0" prefWidth="278.0" promptText="firstname" />
+            <TextField fx:id="txtLastname" layoutX="75.0" layoutY="181.0" prefHeight="32.0" prefWidth="278.0" promptText="lastname" />
+            <TextField fx:id="txtEmail" layoutX="75.0" layoutY="224.0" prefHeight="32.0" prefWidth="278.0" promptText="email" />
+            <DatePicker fx:id="txtDOB" layoutX="75.0" layoutY="323.0" prefHeight="32.0" prefWidth="278.0" promptText="dob" />
+            <ComboBox fx:id="txtStatus" editable="true" layoutX="76.0" layoutY="425.0" prefHeight="32.0" prefWidth="278.0" promptText="gender" />
+            <TextField fx:id="txtTelephone" layoutX="76.0" layoutY="373.0" prefHeight="32.0" prefWidth="278.0" promptText="telephone" />
+            <TextField fx:id="txtMdp" layoutX="75.0" layoutY="272.0" prefHeight="32.0" prefWidth="278.0" promptText="mdp" />
+            <Button fx:id="btnUpdate" layoutX="76.0" layoutY="485.0" mnemonicParsing="false" onMouseClicked="#HandleEvents1" prefHeight="23.0" prefWidth="278.0" style="-fx-background-color: #FF0000;" styleClass="button2" text="Update" />
+         </children>
+      </Pane>
+      <Label fx:id="lblStatus" layoutX="447.0" layoutY="32.0" prefHeight="32.0" prefWidth="354.0" text="Status :" />
+      <TableView fx:id="tblData" layoutX="447.0" layoutY="80.0" onMouseClicked="#HandleEvents" prefHeight="478.0" prefWidth="603.0">
+         <columns>
+            <TableColumn fx:id="Colid" prefWidth="75.0" text="id_user" />
+            <TableColumn fx:id="ColNom" prefWidth="75.0" text="nom" />
+            <TableColumn fx:id="ColPrenom" prefWidth="75.0" text="prenom" />
+            <TableColumn fx:id="ColEmail" prefWidth="75.0" text="E-mail" />
+            <TableColumn fx:id="ColMdp" prefWidth="75.0" text="Mdp" />
+            <TableColumn fx:id="ColDate" prefWidth="75.0" text="date_Nais" />
+            <TableColumn fx:id="ColTele" prefWidth="75.0" text="Telephone" />
+            <TableColumn fx:id="ColStatus" prefWidth="75.0" text="Status" />
+         </columns></TableView>
+   </children>
+</AnchorPane>
