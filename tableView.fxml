@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="540.0" prefWidth="884.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TableViews">
+   <children>
+      <Pane layoutY="87.0" prefHeight="3.0" prefWidth="200.0" style="-fx-background-color: BLACK;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Text layoutX="15.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add attachments" wrappingWidth="255.13671875">
+         <font>
+            <Font name="Bauhaus 93" size="32.0" />
+         </font>
+      </Text>
+      <HBox alignment="CENTER" layoutX="675.0" layoutY="14.0" prefHeight="36.0" prefWidth="31.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button minHeight="3.0" mnemonicParsing="false" onMouseClicked="#close" prefHeight="45.0" prefWidth="54.0" text="X" />
+         </children>
+      </HBox>
+      <ButtonBar layoutX="354.0" layoutY="103.0" prefHeight="40.0" prefWidth="281.0">
+        <buttons>
+          <Button mnemonicParsing="false" onMouseClicked="#getAddView" style="-fx-background-color: Blue;" text="ADD" />
+            <Button layoutX="135.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#refresh" style="-fx-background-color: Blue;" text="Refrech" />
+            <Button layoutX="135.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#print" prefHeight="32.0" prefWidth="121.0" style="-fx-background-color: Blue;" text="Print" />
+        </buttons>
+      </ButtonBar>
+      <TableView fx:id="TableFormation" layoutX="239.0" layoutY="163.0" prefHeight="277.0" prefWidth="591.0">
+        <columns>
+          <TableColumn fx:id="idFile" prefWidth="101.0" text="idFile" />
+          <TableColumn fx:id="id_formation" prefWidth="92.0" text="idFormation" />
+            <TableColumn fx:id="file" prefWidth="142.0" text="file_blob" />
+            <TableColumn fx:id="dateColm" prefWidth="153.0" text="Date-Creation" />
+            <TableColumn fx:id="editCol" prefWidth="130.0" text="Edit" />
+        </columns>
+      </TableView>
+      <Button fx:id="addFileB" layoutX="10.0" layoutY="206.0" mnemonicParsing="false" onAction="#addFile" prefHeight="32.0" prefWidth="141.0" style="-fx-background-color: blue;" text="return to plateforme" />
+   </children>
+</AnchorPane>

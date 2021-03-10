@@ -1,37 +1,84 @@
-.button
+.button1
 {
--fx-background-color : #FFF;
--fx-border-color: #696969;
--fx-text-fill:  #696969;
+-fx-background-color : #393351;
+-fx-background-radius :  30 0 0 30;
 }
-.button:hover
+.button1:hover
 {
--fx-background-color : #355ECE ;
--fx-text-fill:  #FFF;
+-fx-background-color : #524A7B ;
+-fx-background-radius :  30 0 0 30;
 }
-.button:pressed
+.button1:pressed
 {
--fx-background-color : #0C39FF ;
--fx-text-fill: #FFF;
+-fx-background-color : #2F2B43 ;
+-fx-background-radius :  30 0 0 30;
 }
 
 .button2
 {
--fx-background-color :  #8B0000;
--fx-border-color: #FFF;
--fx-text-fill:  #FFF;
+-fx-background-color : #393351;
+-fx-background-radius :  20;
 }
 .button2:hover
 {
--fx-background-color : #0C3988 ;
--fx-text-fill:   #FFF;
+-fx-background-color : #524A7B ;
+-fx-background-radius :  20;
 }
 .button2:pressed
 {
--fx-background-color : #0C3400 ;
--fx-text-fill: #FFF;
+-fx-background-color : #2F2B43 ;
+-fx-background-radius :  20;
 }
 
+.button3
+{
+    -fx-background-color : #141124;
+    -fx-background-radius :  0 0 0 0;
+}
+.button3:hover
+{
+    -fx-background-color : #524A7B ;
+}
+.button3:pressed
+{
+    -fx-background-color : #2F2B43 ;
+}
+
+.button4
+{
+    -fx-background-color :linear-gradient(to top left, #41951C, #D4CEE3);
+    -fx-background-radius :  30 30 30 30;
+}
+.button4:hover
+{
+    -fx-background-color :linear-gradient(to top left, #D4CEE3, #41951C);
+    -fx-background-radius :  30 30 30 30;
+}
+.button4:pressed
+{
+    -fx-background-color :linear-gradient(to top left, #41951C, #D4CEE3);
+    -fx-background-radius :  30 30 30 30;
+}
+
+
+.combo-box
+{
+    -fx-background-color : #141124;
+    -fx-border-color:  #515658;
+    -fx-border-radius: 30;
+}
+.combo-box:hover
+{
+    -fx-background-color : #141124;
+    -fx-border-color:  #FFFF;
+    -fx-border-radius: 30;
+}
+.combo-box:pressed
+{
+    -fx-background-color : #141124;
+    -fx-border-color:  #FFFF;
+    -fx-border-radius: 30;
+}
 
 .table-view .column-header,
 .table-view .column-header-background .filler {
@@ -48,7 +95,6 @@
    -fx-cell-size: 30;
   -fx-alignment: center-left;
   -fx-text-fill: #000000;
-  -fx-alignment: CENTER_LEFT;
 }
 
 .table-row-cell:selected {
@@ -56,7 +102,7 @@
  }
  .table-row-cell:selected .text {
         -fx-fill : white ;
- 
+
  }
 /* scroll bar starts here */
 
@@ -99,4 +145,8 @@
 .chart-pie {
     -fx-border-color: derive(-fx-pie-color, 1%);
     -fx-border-width: 0px;
+}
+.linear-grad
+{
+    -fx-background-color: linear-gradient(to bottom left, #A868A0, #2D75E8);
 }
