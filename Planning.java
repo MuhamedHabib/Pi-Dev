@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Entites;
-import java.sql.Date;
+
 import java.time.LocalDate;
 
 /**
@@ -12,11 +12,27 @@ import java.time.LocalDate;
  * @author user
  */
 public class Planning {
+     
+      private int id_planning;
+         private int id_event;
+       private LocalDate date_creation;
+      private int id_user;
 
-    private int id_p;
-    private LocalDate date_creation;
-    private int id_formation;
-    private String libelle;
+    public int getId_planning() {
+        return id_planning;
+    }
+
+    public void setId_planning(int id_planning) {
+        this.id_planning = id_planning;
+    }
+
+    public int getId_event() {
+        return id_event;
+    }
+
+    public void setId_event(int id_event) {
+        this.id_event = id_event;
+    }
 
     public LocalDate getDate_creation() {
         return date_creation;
@@ -26,53 +42,25 @@ public class Planning {
         this.date_creation = date_creation;
     }
 
-   
-
-   
-
-    public String getLibelle() {
-        return libelle;
+    public int getId_user() {
+        return id_user;
     }
 
-    public void setLibelle(String libelle) {
-        this.libelle = libelle;
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
     }
 
-    public int getId_p() {
-        return id_p;
+    public Planning() {
     }
 
-    public void setId_p(int id_p) {
-        this.id_p = id_p;
-    }
-
-    
-
-    public int getId_formation() {
-        return id_formation;
-    }
-
-    public void setId_formation(int id_formation) {
-        this.id_formation = id_formation;
-    }
-
-    
-    
-     public Planning() {
-        
-    }
-
-    public Planning(int id_p, LocalDate date_creation, int id_formation, String libelle) {
-        this.id_p = id_p;
+    public Planning(int id_planning, int id_event, LocalDate date_creation, int id_user) {
+        this.id_planning = id_planning;
+        this.id_event = id_event;
         this.date_creation = date_creation;
-        this.id_formation = id_formation;
-        this.libelle = libelle;
+        this.id_user = id_user;
     }
- 
-
-    @Override
-    public String toString() {
-        return "Planning{" + "id_p=" + id_p + ", date_creation=" + date_creation + ", id_formation=" + id_formation + ", libelle=" + libelle + '}';
-    }
-     
+      
+      
+   
+    
 }

@@ -5,11 +5,11 @@
  */
 package HelpDesk;
 
-import Entites.Planning;
-import service.ServicePlanning;
+import Entites.Events;
+import service.ServiceEvent;
 
 import java.net.URL;
-import java.sql.SQLException;
+import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -18,31 +18,35 @@ import java.util.logging.Logger;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableCell;
+import javafx.scene.control.cell.PropertyValueFactory;
+import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.prefs.Preferences;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
+import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
+
 
 
 public class FXMLController implements Initializable {
 
     @FXML
-    private TextField txfidp;
-    @FXML
     private TextField txfidf;
     @FXML
     private Button addBtn;
     @FXML
-    private TableView<Planning> LAffiche;
+    private TableView<Events> LAffiche;
     
     @FXML
     private DatePicker date;
@@ -50,101 +54,197 @@ public class FXMLController implements Initializable {
     private Button updateBtn;
     @FXML
     private TextField tlib;
+   
     @FXML
-    private TableColumn<Planning, Integer> colidp;
+    private TableColumn<Events,Integer> colidf;
     @FXML
-    private TableColumn<Planning,Integer> colidf;
+    private TableColumn<Events, LocalDate> coldate;
     @FXML
-    private TableColumn<Planning, LocalDate> coldate;
+    private TableColumn<Events, String> collibelle;
     @FXML
-    private TableColumn<Planning, String> collibelle;
+    private TableColumn<Events, Events> colAction;
     @FXML
-    private TableColumn<Planning, Planning> colAction;
-
-    /**
-     * Initializes the controller class.
-     */
+    private TableColumn<Events, Integer> colevent;
+    @FXML
+    private TextField txfevent;
+    @FXML
+    private TextField filterField;
+ 
+   
+ 
+ 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        Preferences userPreferences = Preferences.userRoot();
+        String role = userPreferences.get("role", null);
+        String nom = userPreferences.get("nom", null);
+        String prenom = userPreferences.get("prenom", null);
+      // nomPrenomLabel.setText(prenom +" - "+nom+" : "+role);
+        this.refreshTableNormal();
 
-        
+        this.filterField.textProperty().addListener((obs, ov, nv) -> {
+            System.out.println(nv.toString());
+            if (nv.length() != 0) {
+                refreshTableFiltred(nv);
+            } else {
+                this.refreshTableNormal();
+            }
+        });
+
     }
 
+    public List<Events> fetchAll() {
+        try {
+            ServiceEvent sp = new ServiceEvent();
+            ResultSet data = sp.consulterToutEvents();
+            List l = new LinkedList();
+            while (data.next()) {
+                Events e= new Events();
+                e.setId_event(data.getInt("id_event"));
+                e.setId_formation(data.getInt("id_formation"));
+              
+                e.setDate_event(data.getDate("date_event").toLocalDate());
+                e.setLibelle(data.getString("libelle"));
+                l.add(e);
+            }
+            return l;
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            return null;
+        }
+    }
+
+    public List<Events> fetchAlternate(String keyword) {
+        try {
+            ServiceEvent sp= new ServiceEvent();
+            ResultSet data = sp.AfficherEvents(keyword);
+            List l= new LinkedList();
+          
+                 while (data.next()) {
+                Events e= new Events();
+                e.setId_event(data.getInt("id_event"));
+                e.setId_formation(data.getInt("id_formation"));
+              
+                e.setDate_event(data.getDate("date_event").toLocalDate());
+                e.setLibelle(data.getString("libelle"));
+                l.add(e);
+                
+                
+                
+                
+            }
+            return l;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public void refreshTableFiltred(String keyword) {
+        try {
+            colevent.setCellValueFactory(new PropertyValueFactory<>("id_event"));
+            colidf.setCellValueFactory(new PropertyValueFactory<>("id_formation"));
+            coldate.setCellValueFactory(new PropertyValueFactory<>("date_event"));
+          
+            collibelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
+            LAffiche.getItems().setAll(fetchAlternate(keyword));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void refreshTableNormal() {
+        try {
+            colevent.setCellValueFactory(new PropertyValueFactory<>("id_event"));
+            colidf.setCellValueFactory(new PropertyValueFactory<>("id_formation"));
+            coldate.setCellValueFactory(new PropertyValueFactory<>("date_event"));
+          
+            collibelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
+           LAffiche .getItems().setAll(fetchAll());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+        
+        
+
+
     @FXML
-    private void AjouterPlanning(ActionEvent event) throws SQLException {
+    private void AjouterEvent(ActionEvent event) throws SQLException {
 
-        ServicePlanning sp = new ServicePlanning();
-        Planning p = new Planning();
-        int id_p = Integer.parseInt(txfidp.getText());
-        p.setId_p(id_p);
+        ServiceEvent sp = new ServiceEvent();
+        Events p = new Events();
+        int id_event = Integer.parseInt(txfevent.getText());
+        p.setId_event(id_event);
         int id_formation = Integer.parseInt(txfidf.getText());
-        p.setId_formation(id_formation);
+          p.setId_formation(id_formation);
+      
+       p.setLibelle(tlib.getText());
+        p.setDate_event(date.getValue());
 
-        p.setDate_creation(date.getValue());
-    
-        p.setLibelle(tlib.getText());
-        sp.AddPlanning(p);
+        sp.AddEvent(p);
         init();
     }
 
     @FXML
-    private void AfficherPlanning(ActionEvent event) throws SQLException {
-
+    private void AfficherEvent(ActionEvent event) throws SQLException {
+        
         display();
     }
 
  
     public void display() throws SQLException {
-        ServicePlanning p = new ServicePlanning();
-        List<Planning> list = p.AfficherPlanning();
-        ObservableList<Planning> list1 = FXCollections.observableArrayList();
+        ServiceEvent p = new ServiceEvent();
+        List<Events> list = p.AfficherEvent();
+        ObservableList<Events> list1 = FXCollections.observableArrayList();
         
         list1.addAll(list);
         
         LAffiche.setItems(list1);
        
-     colidp .setCellValueFactory(new PropertyValueFactory<>("Id_p"));
+    colevent .setCellValueFactory(new PropertyValueFactory<>("Id_event"));
 
          colidf.setCellValueFactory(new PropertyValueFactory<>("id_formation"));
 
-        coldate.setCellValueFactory(new PropertyValueFactory<>("date_creation"));
+        coldate.setCellValueFactory(new PropertyValueFactory<>("date_event"));
 
        collibelle .setCellValueFactory(new PropertyValueFactory<>("libelle"));
         
        
         colAction.setCellValueFactory(column -> new ReadOnlyObjectWrapper<>(column.getValue()));
         colAction.setCellFactory(column -> {
-            return new TableCell<Planning, Planning>() {
+            return new TableCell<Events, Events>() {
                 private final Button deleteButton = new Button("supprimer");
                 
                 @Override
-                protected void updateItem(Planning planning, boolean empty) {
-                    super.updateItem(planning, empty);
-                    if (planning == null) {
+                protected void updateItem(Events events , boolean empty) {
+                    super.updateItem(events, empty);
+                    if (events== null) {
                         setGraphic(null);
                         return;
                     }
                     setGraphic(deleteButton);
-                    ServicePlanning p = new ServicePlanning();
+                    ServiceEvent p = new ServiceEvent();
                     deleteButton.setOnAction(new EventHandler<ActionEvent>() {
                         @Override
                         public void handle(ActionEvent event) {
-                            p.deletePlanning(planning.getId_p());
+                           p.deleteEvent(events.getId_event());
+                             
                             try {
                                 init();
                             } catch (SQLException ex) {
                                 Logger.getLogger(FXMLController.class.getName()).log(Level.SEVERE, null, ex);
-                            }
+                         }
                         }
                     });
                     
-                    LAffiche.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Planning>() {
+                    LAffiche.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Events>() {
                         @Override
-                        public void changed(ObservableValue<? extends Planning> observable, Planning oldValue, Planning newValue) {
+                        public void changed(ObservableValue<? extends Events> observable, Events oldValue, Events newValue) {
                             if (LAffiche.getSelectionModel().getSelectedItem() != null) {
-                                txfidp.setText(String.valueOf(LAffiche.getSelectionModel().getSelectedItem().getId_p()));
+                               txfevent .setText(String.valueOf(LAffiche.getSelectionModel().getSelectedItem().getId_event()));
                                 txfidf.setText(String.valueOf(LAffiche.getSelectionModel().getSelectedItem().getId_formation()));
-                                date.setValue(LAffiche.getSelectionModel().getSelectedItem().getDate_creation());
+                                date.setValue(LAffiche.getSelectionModel().getSelectedItem().getDate_event());
                          
                               tlib.setText(String.valueOf(LAffiche.getSelectionModel().getSelectedItem().getLibelle()));
                                 
@@ -161,24 +261,29 @@ public class FXMLController implements Initializable {
         });
     }
 
+  
+
 
 
   
     
+     
     @FXML
     private void btnUpdate(ActionEvent event) throws SQLException {
-        ServicePlanning sp = new ServicePlanning();
-        Planning p = new Planning();
-        int id_p = Integer.parseInt(txfidp.getText());
-        p.setId_p(id_p);
+        ServiceEvent sp = new ServiceEvent();
+        Events p = new Events();
+        int id_event = Integer.parseInt(txfevent.getText());
+        p.setId_event(id_event);
+          p.setDate_event(date.getValue());
         int id_formation = Integer.parseInt(txfidf.getText());
         p.setId_formation(id_formation);
 
-        p.setDate_creation(date.getValue());
+      
         p.setLibelle(tlib.getText());
-        sp.updatePlanning(p);
+        sp.updateEvent(p);
         init();
     }
+
 
     @FXML
     private void btnInit(ActionEvent event) throws SQLException {
@@ -188,7 +293,7 @@ public class FXMLController implements Initializable {
     }
 
     public void init() throws SQLException {
-        txfidp.setText("");
+        txfevent.setText("");
         date.setValue(null);
         txfidf.setText("");
         tlib.setText("");
@@ -197,10 +302,18 @@ public class FXMLController implements Initializable {
         display();
     }
 
-}
-  
+ 
+         
+         
+          
+      
+       
+        
+    }
 
 
+    
+                
 
 
 

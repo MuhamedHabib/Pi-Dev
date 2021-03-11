@@ -1,4 +1,5 @@
-package Controllers;
+
+package HelpDesk;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,18 +7,30 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main extends Application {
 
+/**
+ *
+ * @author ComputerT
+ */
+public class Main extends Application {
+    
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../gui/sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.show();
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("InterfaceMailingAdmin.fxml"));
+             
+        Scene scene = new Scene(root);
+        
+        stage.setScene(scene);
+        stage.show();
+      
     }
 
-
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
         launch(args);
+       
     }
+    
 }
