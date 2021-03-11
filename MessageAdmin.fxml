@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="Ajouter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="743.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControlleurAdminMessage">
+    <children>
+        <TableView fx:id="Messages" layoutX="93.0" layoutY="109.0" prefHeight="289.0" prefWidth="527.0" />
+        <Label layoutX="241.0" layoutY="8.0" prefHeight="51.0" prefWidth="275.0" text="Liste des messages">
+            <font>
+                <Font size="28.0" />
+            </font>
+        </Label>
+      <TextField fx:id="recherche" layoutX="471.0" layoutY="76.0" />
+    </children>
+
+</Pane>
