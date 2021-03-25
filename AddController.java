@@ -1,6 +1,6 @@
 package Controllers;
 
-import Entity.formationhd;
+import Entity.File;
 import helpers.DbConnect;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,17 +10,15 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 
-import java.awt.*;
 import java.awt.event.MouseEvent;
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -36,6 +34,7 @@ public class AddController implements Initializable {
     @FXML
     private DatePicker dateF;
 
+    String imagePath = null;
 
 
     @FXML
@@ -47,7 +46,7 @@ public class AddController implements Initializable {
     Connection connection = null;
     ResultSet resultSet = null;
     PreparedStatement preparedStatement;
-    formationhd f = null;
+    File f = null;
     private boolean update;
     int formationId;
 
@@ -66,7 +65,7 @@ public class AddController implements Initializable {
 
         
 
-        if (id.isEmpty() || file.isEmpty() || date_creation.isEmpty() ) {
+        if (id.isEmpty() || file.isEmpty() || date_creation.isEmpty()||imagePath== null ) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("Please Fill All DATA");
@@ -83,15 +82,26 @@ public class AddController implements Initializable {
 
     private void getQuery() {
 
-        if (update == false) {
+     /*   if (update == false) {
 
-            query = "INSERT INTO `formationhd`( `id`, `file`, `date_creation`) VALUES (?,?,?)";
+            query = "INSERT INTO `File`( `id`, `file`, `date_creation`) VALUES (?,?,?)";
 
         }else{
-            query = "UPDATE `formationhd` SET "
+            query = "UPDATE `File` SET "
                     + "`id`=?,"
                     + "`file`=?,"
                     + "`date_creation`= ? WHERE id_file = '"+formationId+"'";
+        }*/
+        if (update == false) {
+
+            query = "INSERT INTO `File`( `id`, `file`, `date_creation`, `myfile`) VALUES (?,?,?,?)";
+
+        }else{
+            query = "UPDATE `File` SET "
+                    + "`id`=?,"
+                    + "`file`=?,"
+                    + "`date_creation`= ?,"
+                    +"`myfile`= ? WHERE id_file = '"+formationId+"'";
         }
 
     }
@@ -104,6 +114,7 @@ public class AddController implements Initializable {
             preparedStatement.setString(1, liblField.getText());
             preparedStatement.setString(2, descrF.getText());
             preparedStatement.setString(3, String.valueOf(dateF.getValue()));
+            preparedStatement.setString(4, imagePath);
 
 
             preparedStatement.execute();
@@ -126,20 +137,44 @@ public class AddController implements Initializable {
 
     }
 
-    public void handleButtonAction(ActionEvent event) throws IOException {
-        FileChooser fileChooser =new FileChooser();
+    public String handleButtonAction(ActionEvent event) throws IOException {
+      /*  FileChooser fileChooser =new FileChooser();
         fileChooser.setTitle("Open File Dialog");
        Stage stage =(Stage)anchorpane.getScene().getWindow();
 
-        File file = fileChooser.showOpenDialog(stage);
+        java.io.File file = fileChooser.showOpenDialog(stage);
         if(file!=null)
         {
             Desktop desktop =Desktop.getDesktop();
             desktop.open(file);
+        }*/
+
+
+        FileChooser fc = new FileChooser();
+
+
+        fc.setInitialDirectory(new java.io.File("C:\\ESPRIT\\Esprit\\helpd\\src\\resources"));
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("pdf Files", "*.pdf"));
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("text Files", "*.txt"));
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("video Files", "*.mp4"));
+
+        java.io.File f = fc.showOpenDialog(null);
+        if(f != null)
+        {
+            System.out.println(f);
         }
+        imagePath=f.getPath();
+        imagePath =imagePath.replace("\\","\\\\");
+        return f.getName();
 
 
+    }
+    void setTextField(int id_file, String id, String file, LocalDate toLocalDate, String myfile) {
 
+        formationId = id_file;
+        liblField.setText(id);
+        descrF.setText(file);
+        dateF.setValue(toLocalDate);
 
     }
 
@@ -158,11 +193,4 @@ public class AddController implements Initializable {
         this.update = b;
 
     }*/
-/*  void setTextField(int id_formation, String libelle_formation,String description, LocalDate toLocalDate) {
 
-        formationId = id_formation;
-        liblField.setText(libelle_formation);
-        descrF.setText(description);
-        dateF.setValue(toLocalDate);
-
-    }*/

@@ -3,19 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Intservice;
+package intService;
 
 import java.sql.SQLException;
 import java.util.List;
 
-
-public interface IService <T> {
-
+/**
+ *
+ * @author JAIDI
+ */
+public interface IService<T> {
+    
     public abstract void add (T t) throws SQLException;
     List<T> read() throws SQLException;
     void update(T t) throws SQLException;
-    void delete(T t) throws SQLException;
+    void delete(Long id) throws SQLException;
 
-
-
+    
+    
 }

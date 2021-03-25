@@ -1,15 +1,16 @@
 package Entity;
 
 public class myformation {
-    int id ;
-    String Libelle, description, date , type;
+    Integer id ;
+    String Libelle, description, date , type,image;
 
-    public myformation(int id, String libelle, String description, String date, String type) {
+    public myformation(Integer id, String libelle, String description, String date, String type, String image) {
         this.id = id;
         Libelle = libelle;
         this.description = description;
         this.date = date;
         this.type = type;
+        this.image=image;
     }
 
     public int getId() {
@@ -51,6 +52,13 @@ public class myformation {
     public void setType(String type) {
         this.type = type;
     }
+    public String getImage() {
+        return image;
+    }
+    public void setImage(String image) {
+        this.image = image;
+    }
+
 
 
 }
