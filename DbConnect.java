@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 package helpers;
+import Entity.myformation;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import Entity.myformation;
 
 import java.sql.*;
 import java.util.logging.Level;
@@ -44,7 +44,7 @@ public class DbConnect {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()){
-                list.add(new myformation(Integer.parseInt(rs.getString("id")), rs.getString("libelle"), rs.getString("description"), rs.getString("date"), rs.getString("type")));
+                list.add(new myformation(Integer.parseInt(rs.getString("id")), rs.getString("libelle"), rs.getString("description"), rs.getString("date"), rs.getString("type"), rs.getString("image")));
             }
         } catch (Exception e) {
         }

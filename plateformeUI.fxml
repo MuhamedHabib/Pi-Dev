@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="856.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PlateformeUI">
+   <top>
+      <HBox prefHeight="40.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #A9A9A9;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="47.0" prefWidth="189.0" text="HelpDesk" textFill="DARKRED">
+               <font>
+                  <Font name="Edwardian Script ITC" size="39.0" />
+               </font>
+            </Label>
+            <Separator orientation="VERTICAL" prefHeight="47.0" prefWidth="0.0" />
+            <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="35.0" prefWidth="200.0">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+               <children>
+                  <TextField prefHeight="25.0" prefWidth="171.0" promptText="Search" />
+                  <FontAwesomeIconView glyphName="SEARCH" wrappingWidth="1.0" />
+               </children>
+            </HBox>
+            <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+            <HBox alignment="CENTER" prefHeight="47.0" prefWidth="125.0">
+               <children>
+                  <Label prefHeight="21.0" prefWidth="73.0" text="Custom" textFill="#1b1818">
+                     <font>
+                        <Font name="Berlin Sans FB" size="19.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView glyphName="HOME" size="30" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="230.0" style="-fx-background-color: #A9A9A9;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="220.0" prefWidth="230.0">
+               <children>
+                  <Label prefHeight="32.0" prefWidth="111.0" text="Browse" textFill="DARKRED">
+                     <font>
+                        <Font name="Berlin Sans FB" size="29.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="mousemo">
+                     <children>
+                        <FontAwesomeIconView glyphName="BOOK" />
+                        <Label prefHeight="21.0" prefWidth="128.0" text="Top Courses" textFill="#1b1818">
+                           <font>
+                              <Font name="Berlin Sans FB" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="31.0" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="mousemo">
+                     <children>
+                        <FontAwesomeIconView glyphName="STAR" />
+                        <Label prefHeight="21.0" prefWidth="128.0" text="Categor" textFill="#1b1818">
+                           <font>
+                              <Font name="Berlin Sans FB" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="81.0" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="mousemo">
+                     <children>
+                        <ImageView fitHeight="20.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/icons8_Play_48px.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="21.0" prefWidth="128.0" text="Browse" textFill="#1b1818">
+                           <font>
+                              <Font name="Berlin Sans FB" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="10.0" prefHeight="220.0" prefWidth="230.0">
+               <children>
+                  <Label prefHeight="21.0" prefWidth="73.0" text="Books" textFill="DARKRED">
+                     <font>
+                        <Font name="Berlin Sans FB" size="29.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="mousemo">
+                     <children>
+                        <FontAwesomeIconView glyphName="MOBILE" size="30" wrappingWidth="24.14285707473755" />
+                        <Label prefHeight="21.0" prefWidth="128.0" text="Top Books" textFill="#1b1818">
+                           <font>
+                              <Font name="Berlin Sans FB" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="31.0" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="mousemo">
+                     <children>
+                        <FontAwesomeIconView />
+                        <Label prefHeight="21.0" prefWidth="128.0" text="Favorites" textFill="#1b1818">
+                           <font>
+                              <Font name="Berlin Sans FB" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="81.0" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="mousemo">
+                     <children>
+                        <FontAwesomeIconView glyphName="USER" />
+                        <Label prefHeight="21.0" prefWidth="124.0" text="our Quiz" textFill="#1b1818">
+                           <font>
+                              <Font name="Berlin Sans FB" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="230.0" prefHeight="220.0" prefWidth="230.0">
+               <children>
+                  <Label prefHeight="32.0" prefWidth="107.0" text="Feature" textFill="DARKRED">
+                     <font>
+                        <Font name="Berlin Sans FB" size="29.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="mousemo">
+                     <children>
+                        <FontAwesomeIconView fill="DARKRED" glyphName="HOME" size="30" wrappingWidth="26.0" />
+                        <Label prefHeight="21.0" prefWidth="128.0" text="Planning" textFill="#1b1818">
+                           <font>
+                              <Font name="Berlin Sans FB" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="31.0" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="mousemo">
+                     <children>
+                        <FontAwesomeIconView glyphName="BACK" />
+                        <Label prefHeight="21.0" prefWidth="128.0" text="Reclamation" textFill="#1b1818">
+                           <font>
+                              <Font name="Berlin Sans FB" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="81.0" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="mousemo">
+                     <children>
+                        <FontAwesomeIconView glyphName="CONF" />
+                        <Label prefHeight="21.0" prefWidth="128.0" text="Setting" textFill="#1b1818">
+                           <font>
+                              <Font name="Berlin Sans FB" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Button fx:id="goToHome" alignment="CENTER" mnemonicParsing="false" onAction="#btnHome" prefHeight="34.0" prefWidth="100.0" style="-fx-background-color: #8B0000;" text="ADMIN" textFill="#e1d6d6">
+                     <font>
+                        <Font name="Bell MT" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="34.0" prefWidth="99.0" style="-fx-background-color: #8B0000;" text="Button" textFill="#e1d6d6">
+                     <font>
+                        <Font name="Bell MT" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #A9A9A9 #A9A9A9;" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="32.0" prefWidth="196.0" text="Recently Added" textFill="DARKRED">
+               <font>
+                  <Font name="Berlin Sans FB" size="29.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <ScrollPane prefHeight="183.0" prefWidth="626.0">
+               <content>
+                  <HBox fx:id="hboxfirst" prefHeight="123.0" prefWidth="940.0" spacing="20.0" style="-fx-background-color: #A9A9A9 #A9A9A9;" />
+               </content>
+            </ScrollPane>
+            <Label prefHeight="32.0" prefWidth="196.0" text="Recently Added" textFill="DARKRED">
+               <font>
+                  <Font name="Berlin Sans FB" size="29.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </Label>
+            <ScrollPane prefHeight="258.0" prefWidth="626.0">
+               <content>
+                  <HBox fx:id="hbox" prefHeight="346.0" prefWidth="1121.0" spacing="20.0" style="-fx-background-color: #A9A9A9 #A9A9A9;">
+                     <padding>
+                        <Insets top="30.0" />
+                     </padding>
+                  </HBox>
+               </content>
+               <VBox.margin>
+                  <Insets top="100.0" />
+               </VBox.margin>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

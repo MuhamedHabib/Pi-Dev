@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane id="AnchorPane" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Test">
+    <children>
+        <Rating fx:id="rate" layoutX="12.0" layoutY="54.0" />
+        <Label fx:id="msg" layoutX="82.0" layoutY="119.0" />
+    </children>
+</AnchorPane>
