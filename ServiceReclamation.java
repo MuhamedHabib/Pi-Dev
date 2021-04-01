@@ -2,12 +2,9 @@ package Service;
 
 import Entities.Reclamation;
 import Services.Iservices;
-import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
 import utils.Maconnexion;
 
-import javax.swing.*;
-import java.awt.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,15 +12,9 @@ import java.util.List;
 
 public class ServiceReclamation implements Iservices {
 
-    @FXML
-    private  TextField idRec ;
-    Connection cnx;
-    private Connection connection;
-    private JTextArea tblData;
+    private int id=100;
 
-    @FXML
-    private TextField tfréclamation2;
-    private Reclamation text;
+    Connection cnx;
 
     public TableView<Reclamation> Reclamations;
 
@@ -37,7 +28,7 @@ public class ServiceReclamation implements Iservices {
         try {
             String statut = "en attente";
             Statement st = cnx.createStatement();
-            String query = "insert into reclamation (text , statut) values ('" +r.getText()+"' , '"+statut+"' )";
+            String query = "insert into reclamation (id_user,text , statut, type, screenshot, object) values ('"+id+"' ,'" +r.getText()+"' , '"+statut+"', '"+r.getType()+"' , '"+r.getScreenshot()+"', '"+r.getObject()+"' )";
             System.out.println(query);
             st.executeUpdate(query);
 
@@ -46,6 +37,7 @@ public class ServiceReclamation implements Iservices {
             e.printStackTrace();
         }
     }
+
 
     @Override
     public List<Reclamation> AfficherRec() throws SQLException {
@@ -59,10 +51,15 @@ public class ServiceReclamation implements Iservices {
         while (rst.next()) {
             Reclamation rec = new Reclamation();
             rec.setId_reclamation(rst.getInt(1));
-            rec.setDate_creation(rst.getDate(2));
-            rec.setId_user(rst.getInt(3));
-            rec.setText(rst.getString(4));
-            rec.setStatut(rst.getString(5));
+            rec.setType(rst.getString(2));
+            rec.setDate_creation(rst.getDate(3));
+            rec.setDate_validation(rst.getDate(4));
+            rec.setId_user(rst.getInt(5));
+            rec.setText(rst.getString(6));
+            rec.setStatut(rst.getString(7));
+            rec.setScreenshot( rst.getString(8));
+            rec.setObject(rst.getString(9));
+
 
             Reclamation.add(rec);
         }
@@ -82,16 +79,108 @@ public class ServiceReclamation implements Iservices {
         while (rst.next()) {
             Reclamation rec = new Reclamation();
             rec.setId_reclamation(rst.getInt(1));
-            rec.setDate_creation(rst.getDate(2));
-            rec.setText(rst.getString(4));
-            rec.setStatut(rst.getString(5));
+            rec.setType(rst.getString(2));
+            rec.setDate_creation(rst.getDate(3));
+            rec.setText(rst.getString(6));
+            rec.setStatut(rst.getString(7));
+            rec.setScreenshot( rst.getString(8));
+            rec.setObject(rst.getString(9));
+
 
             Reclamation.add(rec);
         }
         return Reclamation;
     }
 
+    @Override
+    public List<Reclamation> AfficherArchive() throws SQLException {
+        Statement st = cnx.createStatement();
 
+
+        List<Reclamation> Reclamation = new ArrayList<>();
+        String query = "select * from reclamation where statut='validée'";
+        ResultSet rst = st.executeQuery(query);
+        while (rst.next()) {
+            Reclamation rec = new Reclamation();
+            rec.setId_reclamation(rst.getInt(1));
+            rec.setType(rst.getString(2));
+            rec.setDate_creation(rst.getDate(3));
+            rec.setDate_validation(rst.getDate(4));
+            rec.setId_user(rst.getInt(5));
+            rec.setText(rst.getString(6));
+            rec.setScreenshot( rst.getString(8));
+            rec.setObject(rst.getString(9));
+
+
+            Reclamation.add(rec);
+        }
+        return Reclamation;
+    }
+
+    @Override
+    public List<Reclamation> AfficherNotif() throws SQLException {
+        Statement st = cnx.createStatement();
+        List<Reclamation> Reclamation = new ArrayList<>();
+        String query = "select * from reclamation where statut='validée'";
+        ResultSet rst = st.executeQuery(query);
+        while (rst.next()) {
+            Reclamation rec = new Reclamation();
+            rec.setDate_validation(rst.getDate(4));
+            Reclamation.add(rec);
+        }
+        return Reclamation;
+    }
+  /*  public List<Reclamation> rechercheReclamations(String type, String valeur) {
+        List<Reclamation> myList = new ArrayList<Reclamation>();
+        String requete = null;
+        try {
+          if (type.equals("statut")) {
+            requete = "SELECT * from Reclamation where statut ='" + valeur + "'";
+            ; //MAJUSCULE NON OBLIGATOIRE
+        }
+
+            else if (type.equals("Tout")) {
+            requete = "SELECT * from Reclamation where statut like '%" + valeur + "%' or object like '%" + valeur + "%' or text like '%" + valeur + "%  or type like '%" + valeur + "%'"; //MAJUSCULE NON OBLIGATOIRE
+        }
+
+            Statement st = Maconnexion.getInstance().getConnection().prepareStatement(requete); // import java.sql.Statement
+
+           // Statement st = cnx.createStatement();
+            ResultSet rst = st.executeQuery(requete);
+        while (rst.next()) {
+            Reclamation rec = new Reclamation();
+            rec.setId_reclamation(rst.getInt(1));
+            rec.setType(rst.getString(2));
+            rec.setDate_creation(rst.getDate(3));
+            rec.setDate_validation(rst.getDate(4));
+            rec.setId_user(rst.getInt(5));
+            rec.setText(rst.getString(6));
+            rec.setStatut(rst.getString(7));
+            rec.setScreenshot("file:C:\\Users\\Mariem.DESKTOP-L3DPUNQ\\IdeaProjects\\untitled\\src\\images\\" + rst.getString(8));
+            rec.setObject(rst.getString(9));
+
+
+            myList.add(rec);
+        }
+        }catch (SQLException e) {
+        e.printStackTrace();
+    }
+        return myList;
+
+    }
+*/
+
+    public ResultSet AfficherReclamationsFiltre(String keyword) {
+        try {
+            String query = "SELECT * FROM reclamation WHERE type LIKE '%" + keyword + "%'";
+            Statement statement = cnx.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            return rs;
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            return null;
+        }
+    }
     @Override
     public Reclamation findbyId(int id_reclamation) {
        Reclamation rec = new Reclamation();
@@ -103,10 +192,12 @@ public class ServiceReclamation implements Iservices {
             while (rst.next()) {
 
                 rec.setId_reclamation(rst.getInt(1));
-                rec.setDate_creation(rst.getDate(2));
-                rec.setId_user(rst.getInt(3));
-                rec.setText(rst.getString(4));
-                rec.setStatut(rst.getString(5));
+                rec.setDate_creation(rst.getDate(3));
+                rec.setId_user(rst.getInt(5));
+                rec.setText(rst.getString(6));
+                rec.setStatut(rst.getString(7));
+                rec.setScreenshot( rst.getString(8));
+                rec.setObject(rst.getString(9));
             }
         } catch (SQLException e1) {
             System.out.println(e1.getMessage());
@@ -121,9 +212,12 @@ public class ServiceReclamation implements Iservices {
         PreparedStatement pt = null;
         try {
 
-            pt = cnx.prepareStatement("update reclamation SET text =?  where id_reclamation =? ");
+            pt = cnx.prepareStatement("update reclamation SET text =? , object=?, screenshot=?, type=?  where id_reclamation =? ");
             pt.setString(1, r.getText());
-            pt.setInt(2, r.getId_reclamation());
+            pt.setString(2, r.getObject());
+            pt.setString(3, r.getScreenshot());
+            pt.setString(4, r.getType());
+            pt.setInt(5, r.getId_reclamation());
 
             pt.executeUpdate();} catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -136,9 +230,10 @@ public class ServiceReclamation implements Iservices {
         PreparedStatement pt = null;
         try {
 
-            pt = cnx.prepareStatement("update reclamation SET statut =?  where id_reclamation =? ");
+            pt = cnx.prepareStatement("update reclamation SET statut =?, date_validation=? where id_reclamation =? ");
             pt.setString(1, r.getStatut());
-            pt.setInt(2, r.getId_reclamation());
+            pt.setDate(2, r.getDate_validation());
+            pt.setInt(3, r.getId_reclamation());
 
             pt.executeUpdate();} catch (SQLException e) {
             System.out.println(e.getMessage());

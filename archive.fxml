@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="516.0" prefWidth="933.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerArchive">
+   <children>
+       <TextField fx:id="recherche" layoutX="645.0" layoutY="88.0" promptText="Search.." />       <TableView fx:id="archive" layoutX="97.0" layoutY="123.0" prefHeight="316.0" prefWidth="697.0" />
+       <Label alignment="CENTER_RIGHT" layoutX="265.0" layoutY="26.0" prefHeight="30.0" prefWidth="361.0" text="Archive des réclamations" textAlignment="CENTER">
+
+           <font>
+               <Font name="Arial Bold" size="25.0" />
+           </font></Label>
+       <Button fx:id="annuler" layoutX="725.0" layoutY="451.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #8B0000;" text="annuler" textFill="#fffefe">
+           <font>
+               <Font size="13.0" />
+           </font></Button>
+       <ProgressIndicator layoutX="-44.0" layoutY="41.0" progress="0.0" />
+   </children>
+</AnchorPane>

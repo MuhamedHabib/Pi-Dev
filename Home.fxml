@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Home">
+   <children>
+      <Pane layoutX="39.0" layoutY="110.0" prefHeight="190.0" prefWidth="168.0">
+         <children>
+            <Button fx:id="Home2" mnemonicParsing="false" onAction="#Admin" opacity="0.7" prefHeight="190.0" prefWidth="168.0" style="-fx-background-color: #D3D3D3;" styleClass="button2" />
+            <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+               <fill>
+                  <LinearGradient endX="0.8809523809523809" endY="1.0" startY="0.4285714285714286">
+                     <stops>
+                        <Stop color="#fa0505" />
+                        <Stop color="#878787" offset="0.8705479452054788" />
+                        <Stop color="#8f8f8f" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
+            <ImageView fitHeight="49.0" fitWidth="49.0" layoutX="60.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Icone-4-raisons-femme-repond-216x172.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="3.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Liste réclamations">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="381.0" layoutY="110.0" prefHeight="190.0" prefWidth="168.0">
+         <children>
+            <Button fx:id="Home" mnemonicParsing="false" onAction="#ChartController" opacity="0.7" prefHeight="190.0" prefWidth="168.0" style="-fx-background-color: #D3D3D3;" styleClass="button2" />
+            <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+               <fill>
+                  <LinearGradient endX="1.0" endY="0.7476190476190476" startY="0.4952380952380952">
+                     <stops>
+                        <Stop color="#fa0505" />
+                        <Stop color="#878787" offset="0.8705479452054788" />
+                        <Stop color="#8f8f8f" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
+            <ImageView fitHeight="49.0" fitWidth="49.0" layoutX="60.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Icone-4-raisons-femme-repond-216x172.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="3.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Charts">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="-3.0" layoutY="1.0" prefHeight="46.0" prefWidth="113.0">
+         <children>
+            <Button layoutX="-9.0" layoutY="-9.0" mnemonicParsing="false" onAction="#retourButton" opacity="0.7" prefHeight="76.0" prefWidth="117.0" rotate="180.0" style="-fx-background-color: #D3D3D3;" styleClass="button2">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/baseline_trending_flat_black_18dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

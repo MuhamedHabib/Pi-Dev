@@ -8,11 +8,10 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="550.0" prefWidth="733.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerMessage">
+<AnchorPane prefHeight="550.0" prefWidth="733.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerMessage">
    <children>
       <TabPane layoutY="-8.0" prefHeight="558.0" prefWidth="731.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -34,7 +33,6 @@
                            <font>
                               <Font size="14.0" />
                            </font></Label>
-                        <ToggleButton fx:id="Record" layoutX="443.0" layoutY="109.0" mnemonicParsing="false" onAction="#Record" text="Record" />
                      </children></AnchorPane>
             </content>
           </Tab>

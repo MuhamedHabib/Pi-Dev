@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
@@ -15,6 +18,19 @@
             </font>
         </Label>
       <TextField fx:id="recherche" layoutX="471.0" layoutY="76.0" />
+      <Pane layoutX="-12.0" layoutY="-8.0" prefHeight="64.0" prefWidth="134.0" rotate="180.0">
+         <children>
+            <Button layoutX="16.0" mnemonicParsing="false" onAction="#retourButton" opacity="0.7" prefHeight="61.0" prefWidth="126.0" style="-fx-background-color: #D3D3D3;" styleClass="button2">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/baseline_trending_flat_black_18dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
     </children>
 
 </Pane>

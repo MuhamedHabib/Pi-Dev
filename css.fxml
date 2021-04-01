@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1087.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane prefHeight="519.0" prefWidth="262.0" style="-fx-background-color: #696969;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox layoutY="160.0" prefHeight="356.0" prefWidth="262.0" style="-fx-alignment: #A9A9A9;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="160.0">
+                    <children>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="262.0" style="-fx-background-color: #696969 #696969 #696969;" styleClass="button1" stylesheets="@../css/fullpackstyling.css" text="Consulter Profil" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../resources/ben-affleck.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <padding>
+                                <Insets left="40.0" />
+                            </padding>
+                     <font>
+                        <Font size="20.0" />
+                     </font></Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="262.0" style="-fx-background-color: #696969;" styleClass="button1" stylesheets="@../css/fullpackstyling.css" text="Consulter Planning" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../resources/ic_usr.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets left="40.0" />
+                            </padding>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="262.0" style="-fx-background-color: #696969;" styleClass="button1" stylesheets="@../css/fullpackstyling.css" text="Reclamer" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../resources/profile-adam-levine.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets left="40.0" />
+                            </padding>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                        </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="262.0" style="-fx-background-color: #696969;" styleClass="button1" stylesheets="@../css/fullpackstyling.css" text="Evaluer" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/profile-james-marsden.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="262.0" style="-fx-background-color: #696969;" styleClass="button1" stylesheets="@../css/fullpackstyling.css" text="Contacter" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../resources/profile-james-marsden.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets left="40.0" />
+                            </padding>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                        </Button>
+                    </children>
+                </VBox>
+                <Pane layoutY="25.0" prefHeight="61.0" prefWidth="262.0" style="-fx-background-color: #8B0000; -fx-background-radius: 5;">
+               <children>
+                  <Label layoutX="95.0" layoutY="17.0" prefHeight="27.0" prefWidth="174.0" text="Nom &amp; prenom" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="49.0" fitWidth="68.0" layoutX="26.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/ben-affleck.png" />
+                     </image>
+                  </ImageView>
+               </children>
+                </Pane>
+            </children></AnchorPane>
+        <Pane layoutX="262.0" prefHeight="649.0" prefWidth="631.0" style="-fx-background-color: #A9A9A9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="262.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Pane layoutX="-25.0" layoutY="-178.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #8B0000; -fx-background-radius: 70;" />
+                <Pane layoutX="76.0" layoutY="106.0">
+                    <children>
+                        <Button layoutY="52.0" mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" style="-fx-background-color: #D3D3D3;" styleClass="button2" stylesheets="@../css/fullpackstyling.css" />
+                    </children>
+                </Pane>
+                <Pane layoutX="316.0" layoutY="106.0" prefHeight="202.0" prefWidth="179.0">
+               <children>
+                  <Button layoutX="14.0" layoutY="54.0" mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" style="-fx-background-color: #D3D3D3;" styleClass="button2" stylesheets="@../css/fullpackstyling.css" />
+               </children>
+                </Pane>
+                <Pane layoutX="71.0" layoutY="354.0" prefHeight="202.0" prefWidth="179.0">
+               <children>
+                  <Button layoutX="6.0" layoutY="14.0" mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" style="-fx-background-color: #D3D3D3;" styleClass="button2" stylesheets="@../css/fullpackstyling.css" />
+               </children>
+                </Pane>
+                <Pane layoutX="316.0" layoutY="354.0" prefHeight="202.0" prefWidth="179.0">
+               <children>
+                  <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" style="-fx-background-color: #D3D3D3;" styleClass="button2" stylesheets="@../css/fullpackstyling.css" />
+               </children>
+                </Pane>
+                <Pane layoutX="559.0" layoutY="354.0" prefHeight="202.0" prefWidth="179.0">
+               <children>
+                  <Button layoutX="6.0" layoutY="14.0" mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" style="-fx-background-color: #D3D3D3;" styleClass="button2" stylesheets="@../css/fullpackstyling.css" />
+               </children>
+                </Pane>
+                <Pane layoutX="559.0" layoutY="106.0" prefHeight="190.0" prefWidth="174.0">
+               <children>
+                  <Button layoutX="3.0" layoutY="54.0" mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" style="-fx-background-color: #D3D3D3;" styleClass="button2" stylesheets="@../css/fullpackstyling.css" />
+               </children>
+                </Pane>
+            <Label layoutX="14.0" layoutY="11.0" prefHeight="80.0" prefWidth="322.0" text="Bienvenue" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft JhengHei UI" size="58.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="94.0" fitWidth="94.0" layoutX="706.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/165639961_1285021581884302_953758461492057710_n.png" />
+               </image>
+            </ImageView>
+            <TextField layoutX="467.0" layoutY="53.0" prefHeight="30.0" prefWidth="179.0" promptText="Recherche" />
+            <Label layoutX="15.0" layoutY="620.0" prefHeight="30.0" prefWidth="471.0" text="© 2021 InnovaTech Inc. Tous droits réservés." />
+            <ImageView fitHeight="20.0" fitWidth="27.0" layoutX="790.0" layoutY="625.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/facebook-icon-black.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="27.0" layoutX="761.0" layoutY="625.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/3533372101556105733-512.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="27.0" layoutX="696.0" layoutY="625.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/linkedin-square-logo-comments-linkedin-icon-black-11563087424lpctodfamj.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="722.0" layoutY="623.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/639b3dafb544d6f061fcddd2d6686ddb.png" />
+               </image>
+            </ImageView>
+            </children>
+        </Pane>
+      <Pane layoutX="287.0" layoutY="610.0" />
+    </children>
+</AnchorPane>

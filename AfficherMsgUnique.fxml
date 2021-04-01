@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AfficherMsgUnique">
+   <children>
+      <Pane prefHeight="505.0" prefWidth="268.0" style="-fx-background-color: #C0C0C0;">
+         <children>
+            <TextField fx:id="NomTXFLD" layoutX="93.0" layoutY="113.0" prefHeight="31.0" prefWidth="166.0" />
+            <TextField fx:id="PrenomTXFLD" layoutX="93.0" layoutY="172.0" prefHeight="32.0" prefWidth="166.0" />
+            <TextField fx:id="EmailTXFLD" layoutX="94.0" layoutY="235.0" prefHeight="33.0" prefWidth="165.0" />
+            <TextField fx:id="TelTXFLD" layoutX="93.0" layoutY="299.0" prefHeight="32.0" prefWidth="166.0" />
+            <Label layoutX="41.0" layoutY="120.0" prefHeight="17.0" prefWidth="59.0" text="Nom" />
+            <Label layoutX="36.0" layoutY="180.0" prefHeight="17.0" prefWidth="49.0" text="Prénom" />
+            <Label layoutX="41.0" layoutY="243.0" prefHeight="17.0" prefWidth="59.0" text="Email" />
+            <Label layoutX="34.0" layoutY="307.0" prefHeight="17.0" prefWidth="59.0" text="Télephone" />
+         </children>
+      </Pane>
+      <TextArea fx:id="tfmessage" layoutX="289.0" layoutY="112.0" prefHeight="96.0" prefWidth="291.0" />
+      <Button fx:id="repondre" layoutX="291.0" layoutY="237.0" mnemonicParsing="false" onAction="#Repondre" prefHeight="32.0" prefWidth="285.0" style="-fx-background-color: #8B0000;" text="Répondre" textFill="WHITE" />
+      <TextArea fx:id="reponse" layoutX="293.0" layoutY="291.0" prefHeight="41.0" prefWidth="285.0" />
+      <Button fx:id="envoyer" layoutX="519.0" layoutY="354.0" mnemonicParsing="false" onAction="#Envoyer" prefHeight="32.0" prefWidth="59.0" style="-fx-background-color: #8B0000;" text="Envoyer" textFill="WHITE" />
+      <ToggleButton fx:id="Record" layoutX="289.0" layoutY="72.0" mnemonicParsing="false" onAction="#Record" text="Record" />
+   </children>
+</AnchorPane>

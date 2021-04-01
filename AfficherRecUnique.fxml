@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="detail" prefHeight="505.0" prefWidth="748.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AfficherRecUnique">
+   <children>
+      <Label fx:id="reclamation" layoutX="383.0" layoutY="14.0" prefHeight="51.0" prefWidth="252.0" text="Reclamation">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+       <TextField fx:id="tfréclamation" layoutX="308.0" layoutY="325.0" prefHeight="90.0" prefWidth="389.0" />
+       <ComboBox fx:id="type" layoutX="305.0" layoutY="187.0" prefHeight="25.0" prefWidth="157.0" promptText="Sélectionner un type" />
+       <ComboBox fx:id="statut" layoutX="305.0" layoutY="113.0" prefHeight="25.0" prefWidth="157.0" promptText="statut" />
+       <Button fx:id="image" layoutX="530.0" layoutY="125.0" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: #BDBDBD;" text="Importer une image " />
+       <ImageView fx:id="screenshotView" fitHeight="139.0" fitWidth="176.0" layoutX="521.0" layoutY="165.0" pickOnBounds="true" smooth="false" />
+       <TextField fx:id="object" layoutX="308.0" layoutY="263.0" prefHeight="25.0" prefWidth="176.0" />
+      <Button fx:id="valider" layoutX="623.0" layoutY="440.0" mnemonicParsing="false" onAction="#valider" prefHeight="26.0" prefWidth="69.0" style="-fx-background-color: #8B0000;" text="valider" textFill="#fffdfd" />
+      <Pane layoutX="7.0" prefHeight="505.0" prefWidth="268.0" style="-fx-background-color: #C0C0C0;">
+         <children>
+             <TextField fx:id="NomTXFLD" layoutX="93.0" layoutY="113.0" prefHeight="31.0" prefWidth="166.0" />
+             <TextField fx:id="PrenomTXFLD" layoutX="93.0" layoutY="172.0" prefHeight="32.0" prefWidth="166.0" />
+             <TextField fx:id="EmailTXFLD" layoutX="94.0" layoutY="235.0" prefHeight="33.0" prefWidth="165.0" />
+             <TextField fx:id="TelTXFLD" layoutX="93.0" layoutY="299.0" prefHeight="32.0" prefWidth="166.0" />
+             <Label layoutX="41.0" layoutY="120.0" prefHeight="17.0" prefWidth="59.0" text="Nom" />
+             <Label layoutX="36.0" layoutY="180.0" prefHeight="17.0" prefWidth="49.0" text="Prénom" />
+             <Label layoutX="41.0" layoutY="243.0" prefHeight="17.0" prefWidth="59.0" text="Email" />
+             <Label layoutX="34.0" layoutY="307.0" prefHeight="17.0" prefWidth="59.0" text="Télephone" />
+
+         </children></Pane>
+
+   </children>
+</AnchorPane>

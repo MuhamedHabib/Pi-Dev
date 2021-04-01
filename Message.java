@@ -1,14 +1,25 @@
 package Entities;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 public class Message {
     private int id_message;
-    private Timestamp date_creation;
+    private Date date_creation;
     private int id_user;
     private String message;
+    private String reponse;
+    private String record;
 
     public Message() {
+    }
+
+    public Message(int id_message, Date date_creation, int id_user, String message, String reponse, String record) {
+        this.id_message = id_message;
+        this.date_creation = date_creation;
+        this.id_user = id_user;
+        this.message = message;
+        this.reponse = reponse;
+        this.record = record;
     }
 
     public Message(int id_message) {
@@ -19,6 +30,13 @@ public class Message {
 
         this.message=message;    }
 
+    public String getRecord() {
+        return record;
+    }
+
+    public void setRecord(String record) {
+        this.record = record;
+    }
 
     public int getId_message() {
         return id_message;
@@ -28,11 +46,11 @@ public class Message {
         this.id_message = id_message;
     }
 
-    public Timestamp getDate_creation() {
+    public Date getDate_creation() {
         return date_creation;
     }
 
-    public void setDate_creation(Timestamp date_creation) {
+    public void setDate_creation(Date date_creation) {
         this.date_creation = date_creation;
     }
 
@@ -52,7 +70,13 @@ public class Message {
         this.message = message;
     }
 
+    public String getReponse() {
+        return reponse;
+    }
 
+    public void setReponse(String reponse) {
+        this.reponse = reponse;
+    }
 
     @Override
     public String toString() {
@@ -61,6 +85,7 @@ public class Message {
                 ", date_creation=" + date_creation +
                 ", id_user=" + id_user +
                 ", message='" + message + '\'' +
+                ", reponse='" + reponse + '\'' +
                 '}';
     }
 }

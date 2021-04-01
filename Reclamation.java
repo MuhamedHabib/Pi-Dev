@@ -1,17 +1,18 @@
 package Entities;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-
 import java.sql.Date;
 
-public class Reclamation implements Runnable {
+public class Reclamation  {
 
-    private int id_reclamation;
+    private String type;
+    private  int id_reclamation;
     private Date date_creation;
+    private Date date_validation;
     private int id_user;
     private String text;
     private String statut;
+    private String Screenshot;
+    private String object;
 
 
     public Reclamation(){};
@@ -25,26 +26,53 @@ public class Reclamation implements Runnable {
         this.text = text;
     }
 
-    public Reclamation(int id_reclamation, Date date_creation, int id_user, String text, String statut) {
-        this.id_reclamation = id_reclamation;
-        this.date_creation = date_creation;
+    public Reclamation(int id_user, String text, String object) {
         this.id_user = id_user;
         this.text = text;
- this.statut = statut;    }
-
-    public Reclamation(String text) {
-
-this.text=text;    }
-
-    public String getText() {
-        return text;
+        this.object = object;
     }
+
+    public Reclamation(String type, int id_reclamation, Date date_creation, Date date_validation, int id_user, String text, String statut) {
+        this.type = type;
+        this.id_reclamation = id_reclamation;
+        this.date_creation = date_creation;
+        this.date_validation = date_validation;
+        this.id_user = id_user;
+        this.text = text;
+        this.statut = statut;
+    }
+
+
+    public Reclamation(String type, Date date_creation, Date date_validation, int id_user, String text, String statut, String screenshot, String object) {
+        this.type = type;
+        this.date_creation = date_creation;
+        this.date_validation = date_validation;
+        this.id_user = id_user;
+        this.text = text;
+        this.statut = statut;
+        Screenshot = screenshot;
+        this.object = object;
+    }
+
+    public Reclamation(String text) { this.text=text;  }
+
+    public Reclamation(String type, String text, String object) {
+        this.type = type;
+        this.text = text;
+        this.object = object;
+    }
+
+    public String getType() { return type; }
+
+    public void setType(String type) { this.type = type; }
+
+    public String getText() { return text; }
 
     public void setText(String text) {
         this.text = text;
     }
 
-    public int getId_reclamation() {
+    public  int getId_reclamation() {
         return id_reclamation;
     }
 
@@ -60,6 +88,10 @@ this.text=text;    }
         this.date_creation = date_creation;
     }
 
+    public Date getDate_validation() { return date_validation; }
+
+    public void setDate_validation(Date date_validation) { this.date_validation = date_validation; }
+
     public int getId_user() {
         return id_user;
     }
@@ -68,31 +100,42 @@ this.text=text;    }
         this.id_user = id_user;
     }
 
-
-   // public StringProperty statutProperty() { return statut; }
     public String getStatut() {
         return statut;
     }
-
 
     public void setStatut(String statut) {
         this.statut=statut;
     }
 
-    @Override
-    public String toString() {
-        return "Reclamation{" +
-                "id_reclamation=" + id_reclamation +
-                ", date_creation=" + date_creation +
-                ", id_user=" + id_user +
-                ", text='" + text + '\'' +
-                ", statut='" + statut + '\'' +
-                '}';
+    public String getScreenshot() {
+        return Screenshot;
+    }
+
+    public void setScreenshot(String screenshot) {
+        Screenshot = screenshot;
+    }
+
+    public String getObject() {
+        return object;
+    }
+
+    public void setObject(String object) {
+        this.object = object;
     }
 
     @Override
-    public void run() {
-
+    public String toString() {
+        return "Reclamation{" +
+                "type='" + type + '\'' +
+                ", date_creation=" + date_creation +
+                ", date_validation=" + date_validation +
+                ", id_user=" + id_user +
+                ", text='" + text + '\'' +
+                ", statut='" + statut + '\'' +
+                ", Screenshot='" + Screenshot + '\'' +
+                ", object='" + object + '\'' +
+                '}';
     }
 }
 
