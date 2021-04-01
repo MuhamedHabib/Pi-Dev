@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1087.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HomeAdmin">
+    <children>
+        <Pane layoutX="-3.0" prefHeight="649.0" prefWidth="1094.0" style="-fx-background-color: #A9A9A9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Pane layoutX="179.0" layoutY="-159.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #8B0000; -fx-background-radius: 70;" />
+            <Pane layoutX="46.0" layoutY="166.0" prefHeight="190.0" prefWidth="168.0">
+               <children>
+                  <Button mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" style="-fx-background-color: #D3D3D3;" styleClass="button2" />
+                  <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </stroke>
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color blue="0.019600000232458115" green="0.019600000232458115" red="0.9800000190734863" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.8705479452054788">
+                                 <color>
+                                    <Color blue="0.529411792755127" green="0.529411792755127" red="0.529411792755127" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color blue="0.5605263113975525" green="0.5605263113975525" red="0.5605263113975525" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+                  <ImageView fitHeight="49.0" fitWidth="37.0" layoutX="66.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/no-user-image-icon-26.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="-6.0" layoutY="146.0" prefHeight="17.0" prefWidth="174.0" text="Gestion Utilisateurs" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="394.0" layoutY="173.0" prefHeight="190.0" prefWidth="168.0">
+               <children>
+                  <Button mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" style="-fx-background-color: #D3D3D3;" styleClass="button2" />
+                  <Circle layoutX="85.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </stroke>
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color blue="0.019600000232458115" green="0.019600000232458115" red="0.9800000190734863" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.8705479452054788">
+                                 <color>
+                                    <Color blue="0.529411792755127" green="0.529411792755127" red="0.529411792755127" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color blue="0.5605263113975525" green="0.5605263113975525" red="0.5605263113975525" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+                  <ImageView fitHeight="49.0" fitWidth="37.0" layoutX="66.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/kisspng-computer-icons-academic-certificate-public-key-cer-certificate-5ac3953692bb07.266187421522767158601.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="-6.0" layoutY="146.0" prefHeight="17.0" prefWidth="174.0" text="Gestion Formation" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="730.0" layoutY="166.0" prefHeight="190.0" prefWidth="168.0">
+               <children>
+                  <Button mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="174.0" style="-fx-background-color: #D3D3D3;" styleClass="button2" />
+                  <Circle layoutX="85.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </stroke>
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color blue="0.019600000232458115" green="0.019600000232458115" red="0.9800000190734863" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.8705479452054788">
+                                 <color>
+                                    <Color blue="0.529411792755127" green="0.529411792755127" red="0.529411792755127" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color blue="0.5605263113975525" green="0.5605263113975525" red="0.5605263113975525" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+                  <ImageView fitHeight="49.0" fitWidth="37.0" layoutX="66.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/schedule-icon-vector-8.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="1.0" layoutY="147.0" prefHeight="17.0" prefWidth="168.0" text="Gestion Planning &amp; Events" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="226.0" layoutY="385.0" prefHeight="190.0" prefWidth="168.0">
+               <children>
+                  <Button fx:id="Home" mnemonicParsing="false" onAction="#Home" opacity="0.7" prefHeight="190.0" prefWidth="168.0" style="-fx-background-color: #D3D3D3;" styleClass="button2" />
+                  <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </stroke>
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color blue="0.019600000232458115" green="0.019600000232458115" red="0.9800000190734863" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.8705479452054788">
+                                 <color>
+                                    <Color blue="0.529411792755127" green="0.529411792755127" red="0.529411792755127" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color blue="0.5605263113975525" green="0.5605263113975525" red="0.5605263113975525" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+                  <ImageView fitHeight="49.0" fitWidth="49.0" layoutX="60.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/Icone-4-raisons-femme-repond-216x172.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="3.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Gestion Reclamation" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="562.0" layoutY="385.0" prefHeight="190.0" prefWidth="168.0">
+               <children>
+                  <Button mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" style="-fx-background-color: #D3D3D3;" styleClass="button2" />
+                  <Circle layoutX="87.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </stroke>
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color blue="0.019600000232458115" green="0.019600000232458115" red="0.9800000190734863" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.8705479452054788">
+                                 <color>
+                                    <Color blue="0.529411792755127" green="0.529411792755127" red="0.529411792755127" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color blue="0.5605263113975525" green="0.5605263113975525" red="0.5605263113975525" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+                  <ImageView fitHeight="49.0" fitWidth="37.0" layoutX="69.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/235-2355571_standards-compliance-services-do-list-icon-grey-png.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="3.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Gestion Evaluation" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+                <Label layoutX="310.0" layoutY="14.0" prefHeight="79.0" prefWidth="363.0" text="Bienvenue" textFill="WHITE">
+                    <font>
+                        <Font name="Microsoft JhengHei UI" size="58.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="94.0" fitWidth="94.0" layoutX="984.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../resources/165639961_1285021581884302_953758461492057710_n.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="15.0" layoutY="620.0" prefHeight="30.0" prefWidth="471.0" text="© 2021 InnovaTech Inc. Tous droits réservés." />
+                <ImageView fitHeight="20.0" fitWidth="27.0" layoutX="1060.0" layoutY="625.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../resources/facebook-icon-black.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="20.0" fitWidth="27.0" layoutX="1031.0" layoutY="625.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../resources/3533372101556105733-512.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="20.0" fitWidth="27.0" layoutX="966.0" layoutY="625.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../resources/linkedin-square-logo-comments-linkedin-icon-black-11563087424lpctodfamj.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="992.0" layoutY="623.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../resources/639b3dafb544d6f061fcddd2d6686ddb.png" />
+                    </image>
+                </ImageView>
+            <Pane layoutX="1.0" layoutY="60.0" prefHeight="57.0" prefWidth="258.0" style="-fx-background-color: #8B0000; -fx-background-radius: 5;">
+               <children>
+                  <Label layoutX="95.0" layoutY="17.0" prefHeight="27.0" prefWidth="174.0" text="Nom &amp; prenom" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="49.0" fitWidth="68.0" layoutX="26.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/ben-affleck.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="900.0" layoutY="385.0" prefHeight="190.0" prefWidth="168.0">
+               <children>
+                  <Button fx:id="contacter" mnemonicParsing="false" onAction="#contacter" opacity="0.7" prefHeight="190.0" prefWidth="168.0" style="-fx-background-color: #D3D3D3;" styleClass="button2" />
+                  <Circle layoutX="87.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </stroke>
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color blue="0.019600000232458115" green="0.019600000232458115" red="0.9800000190734863" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.8705479452054788">
+                                 <color>
+                                    <Color blue="0.529411792755127" green="0.529411792755127" red="0.529411792755127" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color blue="0.5605263113975525" green="0.5605263113975525" red="0.5605263113975525" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+                  <ImageView fitHeight="49.0" fitWidth="37.0" layoutX="69.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/235-2355571_standards-compliance-services-do-list-icon-grey-png.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="3.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Gestion Message" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            </children>
+        </Pane>
+        <Pane layoutX="287.0" layoutY="610.0" />
+    </children>
+</AnchorPane>

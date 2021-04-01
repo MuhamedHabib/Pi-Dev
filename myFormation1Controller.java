@@ -110,28 +110,6 @@ public class myFormation1Controller implements Initializable {
 
 
     public void Add_users () throws SQLException {
-    /**********************************removed*************************************/
-     /*   conn = DbConnect.getConnect();
-        String sql = "insert into myformation (libelle,description,date,type,image)values(?,?,?,?,? )";
-        try {
-            pst = conn.prepareStatement(sql);
-            pst.setString(1, txt_username.getText());
-            pst.setString(2, txt_password.getText());
-            pst.setString(3, txt_email.getText());
-            pst.setString(4, txt_type.getText());
-            pst.setString(5, imagePath);
-
-
-            pst.execute();
-
-            JOptionPane.showMessageDialog(null, "Users Add succes");
-            UpdateTable();
-            search_user();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        } */
-        /**********************************removed*************************************/
-        /**********************************added*************************************/
 
         if(txt_libelle.getText().isEmpty() || text_description.getText().isEmpty() ||
                 txt_date.getText().isEmpty()|| txt_type.getText().isEmpty() || imagePath== null){
@@ -167,10 +145,7 @@ public class myFormation1Controller implements Initializable {
         txt_libelle.setText(col_libelle.getCellData(index).toString());
         text_description.setText(col_description.getCellData(index).toString());
         txt_date.setText(col_date.getCellData(index).toString());
-        /*
-        * Image image = new Image("file:///"+TableActors.getSelectionModel().getSelectedItem().getImage());
-        imageView.setImage(image);
-        imagePath=TableActors.getSelectionModel().getSelectedItem().getImage();*/
+
         txt_type.setText(col_type.getCellData(index).toString());
 
         /**********************************/
@@ -200,40 +175,10 @@ public class myFormation1Controller implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText("Update succes");
         alert.show();
-     /*   try {
-            conn =  DbConnect.getConnect();
-            String value1 = txt_id.getText();
-            String value2 = txt_username.getText();
-            String value3 = txt_password.getText();
-            String value4 = txt_email.getText();
-            String value5 = txt_type.getText();
-            String value6 = imagePath;
 
-            String sql = "update myformation set id= '"+value1+"',libelle= '"+value2+"',description= '"+
-                    value3+"',date= '"+value4+"',type= '"+value5+"',image= '"+value6+"' where id='"+value1+"' ";
-            pst= conn.prepareStatement(sql);
-            pst.execute();
-            JOptionPane.showMessageDialog(null, "Update");
-            UpdateTable();
-            search_user();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }*/
     }
 
     public void Delete() throws SQLException {
-     /*   conn = DbConnect.getConnect();
-        String sql = "delete from myformation where id = ?";
-        try {
-            pst = conn.prepareStatement(sql);
-            pst.setString(1, txt_id.getText());
-            pst.execute();
-            JOptionPane.showMessageDialog(null, "Delete");
-            UpdateTable();
-            search_user();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }*/
 
         ServiceFormation st= new ServiceFormation();
         st.delete((long) table_users.getSelectionModel().getSelectedItem().getId());
@@ -341,50 +286,12 @@ public class myFormation1Controller implements Initializable {
             imageView.setImage(image);
             FileInputStream fin = new FileInputStream(file);
             int len = (int)file.length();
-          /*  Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/helpdesk","root","");
-            PreparedStatement ps = conn.prepareStatement("INSERT INTO photos(photo)VALUES(?)");
-            ps.setBinaryStream(1,fin,len);
-            int status = ps.executeUpdate();
-            if(status>0)
-            {
-                Alert alert = new Alert(AlertType.INFORMATION);
-                alert.setTitle("Information Dialog");
-                alert.setHeaderText("Information dialog");
-                alert.setContentText("Photo saved successfully");
-                alert.showAndWait();
 
-            }
-            else
-            {
-                Alert alert = new Alert(AlertType.ERROR);
-                alert.setTitle("Error Dialog.");
-                alert.setHeaderText("Error Information");
-                alert.showAndWait();
-            }*/
-            //  conn.close();
         } catch (IOException ex) {
             Logger.getLogger(myFormation1Controller.class.getName()).log(Level.SEVERE, null, ex);
-            //  } catch (ClassNotFoundException ex) {
-            //  Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
-            //  } catch (SQLException ex) {
-            //  Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
-        }
-     /*   FileChooser fileChooser =new FileChooser();
-        fileChooser.setTitle("Open File Dialog");
-        Stage stage =(Stage)anchorpane.getScene().getWindow();
 
-        File file = fileChooser.showOpenDialog(stage);
-        if(file!=null)
-        {
-          //  Desktop desktop =Desktop.getDesktop();
-          //  desktop.open(file);
-          //  image=new Image(file.toURI().toString(),100,120,true,true);
-            imageView=new ImageView(image);
-          //  imageView.setFitWidth(100);
-          //  imageView.setFitHeight(120);
-            //imageView.setPreserveRatio(true);
-        }*/
+        }
+
 
     }
 

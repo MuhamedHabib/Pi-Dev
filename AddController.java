@@ -138,16 +138,7 @@ public class AddController implements Initializable {
     }
 
     public String handleButtonAction(ActionEvent event) throws IOException {
-      /*  FileChooser fileChooser =new FileChooser();
-        fileChooser.setTitle("Open File Dialog");
-       Stage stage =(Stage)anchorpane.getScene().getWindow();
 
-        java.io.File file = fileChooser.showOpenDialog(stage);
-        if(file!=null)
-        {
-            Desktop desktop =Desktop.getDesktop();
-            desktop.open(file);
-        }*/
 
 
         FileChooser fc = new FileChooser();

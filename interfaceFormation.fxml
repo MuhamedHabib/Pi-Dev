@@ -103,7 +103,7 @@
             <Pane layoutX="-25.0" layoutY="-178.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" />
             <Pane layoutX="76.0" layoutY="106.0">
                <children>
-                  <Button fx:id="btnScene1" layoutX="1.0" mnemonicParsing="false" onAction="#handleBtn1" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../../ESPRIT/Esprit/helpd/src/css/fullpackstyling.css" />
+                  <Button fx:id="btnScene1" layoutX="1.0" mnemonicParsing="false" onAction="#handleBtn2" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../../ESPRIT/Esprit/helpd/src/css/fullpackstyling.css" />
                   <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
                      <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
@@ -127,15 +127,15 @@
                         <Image url="@../resources/icons8_Block_50px_1.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" layoutX="-6.0" layoutY="146.0" prefHeight="17.0" prefWidth="174.0" text="Admin Panel" textFill="#323131">
+                  <Label alignment="CENTER" layoutX="-6.0" layoutY="146.0" prefHeight="17.0" prefWidth="174.0" text="Gestion Utilisateur" textFill="#323131">
                      <font>
-                        <Font name="Berlin Sans FB Bold" size="21.0" />
+                        <Font name="Berlin Sans FB Bold" size="19.0" />
                      </font></Label>
                </children>
             </Pane>
             <Pane layoutX="316.0" layoutY="106.0" prefHeight="202.0" prefWidth="179.0">
                <children>
-                  <Button fx:id="btnScene2" mnemonicParsing="false" onAction="#handleBtn2" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../../ESPRIT/Esprit/helpd/src/css/fullpackstyling.css" />
+                  <Button fx:id="btnScene2" mnemonicParsing="false" onAction="#handleBtn1" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../../../ESPRIT/Esprit/helpd/src/css/fullpackstyling.css" />
                   <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
                      <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
@@ -159,9 +159,9 @@
                         <Image url="@../resources/icons8_Car_52px_2.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Plateforme" textFill="#323131">
+                  <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Gestion Formation" textFill="#323131">
                      <font>
-                        <Font name="Berlin Sans FB Bold" size="21.0" />
+                        <Font name="Berlin Sans FB Bold" size="19.0" />
                      </font></Label>
                </children>
             </Pane>
@@ -191,9 +191,9 @@
                         <Image url="@../resources/icons8_Shopping_Cart_50px_2.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" layoutX="3.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Helpful Links" textFill="#323131">
+                  <Label alignment="CENTER" layoutX="-6.0" layoutY="146.0" prefHeight="25.0" prefWidth="179.0" text="Gestion Reclamation" textFill="#323131">
                      <font>
-                        <Font name="Berlin Sans FB Bold" size="21.0" />
+                        <Font name="Berlin Sans FB Bold" size="17.0" />
                      </font></Label>
                </children>
             </Pane>
@@ -216,9 +216,9 @@
                         <Image url="@../resources/icons8_Bill_50px_2.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="FAQ" textFill="#323131">
+                  <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Gestion Evaluation" textFill="#323131">
                      <font>
-                        <Font name="Berlin Sans FB Bold" size="21.0" />
+                        <Font name="Berlin Sans FB Bold" size="18.0" />
                      </font></Label>
                </children>
             </Pane>
@@ -241,7 +241,7 @@
                         <Image url="@../resources/icons8_Broccoli_64px_2.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="About US" textFill="#323131">
+                  <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Gestion Message" textFill="#323131">
                      <font>
                         <Font name="Berlin Sans FB Bold" size="21.0" />
                      </font></Label>
@@ -266,9 +266,9 @@
                         <Image url="@../resources/icons8_Play_Button_50px.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Join Us!" textFill="#323131">
+                  <Label alignment="CENTER" layoutX="3.0" layoutY="137.0" prefHeight="49.0" prefWidth="168.0" text="Gestion Planning&#10;      &amp; Events&#10;&#10;" textFill="#323131">
                      <font>
-                        <Font name="Berlin Sans FB Bold" size="21.0" />
+                        <Font name="Berlin Sans FB Bold" size="18.0" />
                      </font></Label>
                </children>
             </Pane>

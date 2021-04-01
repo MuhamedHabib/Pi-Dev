@@ -33,7 +33,7 @@
                 <TextField fx:id="txt_date" layoutX="24.0" layoutY="159.0" prefHeight="30.0" prefWidth="180.0" promptText="Date" />
                 <TextField fx:id="txt_type" layoutX="24.0" layoutY="207.0" prefHeight="30.0" prefWidth="180.0" promptText="type" />
                 <TextField fx:id="txt_id" layoutX="24.0" layoutY="21.0" prefHeight="23.0" prefWidth="180.0" promptText="ID" />
-            <Button fx:id="button" layoutX="24.0" layoutY="245.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="179.0" style="-fx-background-color: Blue;" text="Choose Icon" textFill="#f8f8f8" AnchorPane.leftAnchor="24.0">
+            <Button fx:id="button" layoutX="24.0" layoutY="245.0" mnemonicParsing="false" onAction="#Filechooser" prefHeight="40.0" prefWidth="179.0" style="-fx-background-color: Blue;" text="Choose Icon" textFill="#f8f8f8" AnchorPane.leftAnchor="24.0">
                <font>
                   <Font name="Bell MT" size="20.0" />
                </font>
