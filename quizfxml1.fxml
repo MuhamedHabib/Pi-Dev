@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.quizController">
+   <children>
+      <Pane prefHeight="678.0" prefWidth="1187.0" style="-fx-background-color: #A9A9A9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane layoutX="226.0" layoutY="-180.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #8b0000; -fx-background-radius: 70;" />
+            <VBox prefHeight="707.0" prefWidth="268.0" style="-fx-background-radius: 0; -fx-background-color: #BDBDBD;">
+               <children>
+                  <AnchorPane prefHeight="707.0" prefWidth="268.0">
+                     <children>
+                        <TextField fx:id="txtid" alignment="CENTER" layoutX="26.0" layoutY="211.0" promptText="ID" style="-fx-background-radius: 30;" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="25.0" />
+                        <TextField fx:id="txtduree" alignment="CENTER" layoutX="26.0" layoutY="327.0" promptText="Duree" style="-fx-background-radius: 30;" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="25.0" />
+                        <TextField fx:id="txtcat" alignment="CENTER" layoutX="26.0" layoutY="252.0" promptText="Categorie" style="-fx-background-radius: 30;" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="25.0" />
+                        <TextField fx:id="txtfile" alignment="CENTER" layoutX="26.0" layoutY="291.0" promptText="Test" style="-fx-background-radius: 30;" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="25.0" />
+                        <DatePicker fx:id="txtDO" layoutX="26.0" layoutY="367.0" promptText="Date Creation" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="25.0" />
+                        <Button fx:id="btnajout" alignment="CENTER" contentDisplay="CENTER" layoutX="75.0" layoutY="424.0" lineSpacing="3.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="30.0" prefWidth="72.0" style="-fx-background-color: #343a40; -fx-background-radius: 22;" text="Ajouter" textFill="#ffffffc5" AnchorPane.bottomAnchor="253.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="121.0" AnchorPane.topAnchor="424.0">
+                           <opaqueInsets>
+                              <Insets left="10.0" />
+                           </opaqueInsets>
+                        </Button>
+                        <Button fx:id="btnmod" alignment="CENTER" contentDisplay="CENTER" layoutX="75.0" layoutY="465.0" lineSpacing="3.0" mnemonicParsing="false" onAction="#modifier" prefHeight="30.0" prefWidth="72.0" style="-fx-background-color: #343a40; -fx-background-radius: 22;" text="Modifier" textFill="WHITE">
+                           <opaqueInsets>
+                              <Insets left="10.0" />
+                           </opaqueInsets>
+                        </Button>
+                        <Button fx:id="btnsupp" alignment="CENTER" contentDisplay="CENTER" layoutX="74.0" layoutY="543.0" lineSpacing="3.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="30.0" prefWidth="72.0" style="-fx-background-color: #343a40; -fx-background-radius: 22;" text="Supprimer" textFill="#fffbfb">
+                           <opaqueInsets>
+                              <Insets left="10.0" />
+                           </opaqueInsets>
+                        </Button>
+                        <Hyperlink fx:id="hl" alignment="CENTER" contentDisplay="CENTER" layoutX="74.0" layoutY="583.0" lineSpacing="3.0" onAction="#tester" prefHeight="30.0" prefWidth="72.0" style="-fx-background-color: #343a40; -fx-background-radius: 22;" text="Test">
+                           <opaqueInsets>
+                              <Insets left="10.0" />
+                           </opaqueInsets>
+                        </Hyperlink>
+                        <Button fx:id="resultat" layoutX="75.0" layoutY="504.0" mnemonicParsing="false" onAction="#resultat" prefHeight="30.0" prefWidth="72.0" style="-fx-background-color: #343a40; -fx-background-radius: 22;" text="Resultat" textFill="#f5f2f2" />
+                        <Text layoutX="63.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUIZ" textAlignment="CENTER" wrappingWidth="142.0">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="btnquiz" layoutY="2.0" mnemonicParsing="false" onAction="#homequiz" style="-fx-background-color: #A9A9A9; -fx-background-radius: 50;" text="Home" />
+                     </children>
+                  </AnchorPane>
+               </children></VBox>
+            <ImageView fitHeight="94.0" fitWidth="94.0" layoutX="1249.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../pidev/untitled/src/resources/165639961_1285021581884302_953758461492057710_n.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="sch" layoutX="978.0" layoutY="36.0" onKeyPressed="#handelsearch" prefHeight="30.0" prefWidth="179.0" promptText="Recherche" style="-fx-background-radius: 30;" />
+            <Label layoutY="666.0" prefHeight="40.0" prefWidth="471.0" text="© 2021 InnovaTech Inc. Tous droits réservés." />
+            <TableView fx:id="tv" layoutX="292.0" layoutY="137.0" onMouseClicked="#handelMouseAction" prefHeight="549.0" prefWidth="925.0" style="-fx-background-radius: 30;">
+               <columns>
+                  <TableColumn fx:id="colid" prefWidth="75.0" text="ID" />
+                  <TableColumn fx:id="colcat" prefWidth="177.0" text="Categorie" />
+                  <TableColumn fx:id="colf" prefWidth="293.0" text="Quiz" />
+                  <TableColumn fx:id="cold" prefWidth="184.0" text="Duree" />
+                  <TableColumn fx:id="coldate" prefWidth="194.0" text="Date Creation" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

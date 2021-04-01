@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.membretestController">
+   <children>
+      <Pane fx:id="hl" onDragDetected="#tester" prefHeight="678.0" prefWidth="1187.0" style="-fx-background-color: #A9A9A9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane layoutX="226.0" layoutY="-180.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #8b0000; -fx-background-radius: 70;" />
+            <VBox layoutX="1.0" prefHeight="707.0" prefWidth="268.0" style="-fx-background-radius: 0; -fx-background-color: #BDBDBD;">
+               <children>
+                  <AnchorPane prefHeight="713.0" prefWidth="268.0">
+                     <children>
+                        <Hyperlink fx:id="hl" alignment="CENTER" contentDisplay="CENTER" layoutX="87.0" layoutY="339.0" lineSpacing="3.0" onAction="#tester" prefHeight="30.0" prefWidth="94.0" style="-fx-background-color: #343a40; -fx-background-radius: 22;" text="Test">
+                           <opaqueInsets>
+                              <Insets left="10.0" />
+                           </opaqueInsets>
+                        </Hyperlink>
+                        <TextField fx:id="cat" alignment="CENTER" layoutX="45.0" layoutY="139.0" onKeyPressed="#handleSearch" prefHeight="30.0" prefWidth="179.0" promptText="Recherche" />
+                        <Button fx:id="btnhom" layoutX="7.0" layoutY="2.0" mnemonicParsing="false" onAction="#handel" style="-fx-background-color: #A9A9A9; -fx-background-radius: 90;" text="Home ">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Button>
+                     </children>
+                  </AnchorPane>
+               </children></VBox>
+            <ImageView fitHeight="88.0" fitWidth="142.0" layoutX="1249.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../pidev/untitled/src/resources/165639961_1285021581884302_953758461492057710_n.png" />
+               </image>
+            </ImageView>
+            <Label layoutY="666.0" prefHeight="40.0" prefWidth="471.0" text="© 2021 InnovaTech Inc. Tous droits réservés." />
+            <TabPane layoutX="271.0" prefHeight="700.0" prefWidth="1078.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="TEST">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tv" layoutX="179.0" layoutY="71.0" onMouseClicked="#handelMouseAction" prefHeight="558.0" prefWidth="680.0">
+                                 <columns>
+                                    <TableColumn fx:id="colcat" prefWidth="145.0" text="Categorie" />
+                                    <TableColumn fx:id="colf" prefWidth="269.0" text="Test" />
+                                    <TableColumn fx:id="cold" prefWidth="97.0" text="Duree" />
+                                    <TableColumn fx:id="coldate" prefWidth="167.0" text="Date Creation" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="mt" text="Mes Test">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tv1" layoutX="66.0" layoutY="113.0" onMouseClicked="#handelMouseAction" prefHeight="558.0" prefWidth="848.0">
+                                 <columns>
+                                    <TableColumn fx:id="id" prefWidth="145.0" text="ID " />
+                                    <TableColumn fx:id="test1" prefWidth="269.0" text="Test" />
+                                    <TableColumn fx:id="user" prefWidth="97.0" text="user" />
+                                    <TableColumn fx:id="date" prefWidth="167.0" text="Date " />
+                                    <TableColumn fx:id="note" prefWidth="167.0" text="note" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

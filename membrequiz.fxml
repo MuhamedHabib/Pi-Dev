@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="691.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.membrequizController">
+   <top>
+      <AnchorPane prefHeight="33.0" prefWidth="691.0" BorderPane.alignment="CENTER">
+         <children>
+                <TextField fx:id="txtcat" alignment="CENTER" layoutX="21.0" layoutY="7.0" onKeyPressed="#handelsearch" prefHeight="25.0" prefWidth="164.0" promptText="Categorie" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="506.0">
+               <opaqueInsets>
+                  <Insets top="10.0" />
+               </opaqueInsets></TextField>
+                <Hyperlink fx:id="hl" layoutX="612.0" layoutY="8.0" onAction="#tester" text="Test" />
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+              <TableView fx:id="tvq" layoutY="8.0" onMouseClicked="#handelMouseAction" prefHeight="404.0" prefWidth="691.0">
+                  <columns>
+                      <TableColumn fx:id="colid" prefWidth="75.0" text="ID" />
+                      <TableColumn fx:id="colcat" prefWidth="75.0" text="Categorie" />
+                      <TableColumn fx:id="colf" prefWidth="202.0" text="Quiz" />
+                      <TableColumn fx:id="cold" prefWidth="44.0" text="Duree" />
+                      <TableColumn fx:id="coldate" prefWidth="94.0" text="Date Creation" />
+                  </columns>
+              </TableView>
+            </children>
+        </AnchorPane>
+   </center>
+</BorderPane>

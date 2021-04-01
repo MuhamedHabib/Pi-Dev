@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Home">
+   <children>
+      <Pane prefHeight="678.0" prefWidth="1187.0" style="-fx-background-color: #A9A9A9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane layoutX="226.0" layoutY="-180.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #8b0000; -fx-background-radius: 70;" />
+            <VBox prefHeight="707.0" prefWidth="268.0" style="-fx-background-radius: 0; -fx-background-color: #BDBDBD;" />
+            <ImageView fitHeight="94.0" fitWidth="94.0" layoutX="1249.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../pidev/untitled/src/resources/165639961_1285021581884302_953758461492057710_n.png" />
+               </image>
+            </ImageView>
+            <Label layoutY="666.0" prefHeight="40.0" prefWidth="471.0" text="© 2021 InnovaTech Inc. Tous droits réservés." />
+            <Button fx:id="btn" layoutX="387.0" layoutY="370.0" mnemonicParsing="false" onAction="#test" prefHeight="168.0" prefWidth="206.0" style="-fx-background-color: #BDBDBD; -fx-background-radius: 30;" text="TEST">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnq" layoutX="687.0" layoutY="370.0" mnemonicParsing="false" onAction="#quiz" prefHeight="168.0" prefWidth="206.0" style="-fx-background-color: #BDBDBD; -fx-background-radius: 30;" text="QUIZ">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
