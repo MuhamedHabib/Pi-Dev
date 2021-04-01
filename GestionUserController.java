@@ -1,27 +1,47 @@
 package gui;
 
 import Entites.personne;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.util.Callback;
 import services.ServicePersonne;
 import utils.database;
 
+import javax.swing.*;
+import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.time.LocalDate;
+import java.sql.*;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class GestionUserController implements Initializable {
+
+    public ImageView userImage;
+    @FXML
+    private TextField txtId;
 
     @FXML
     private TextField txtFirstname;
@@ -53,124 +73,157 @@ public class GestionUserController implements Initializable {
 
     @FXML
     private TableView<personne> tblData;
-    @FXML
-    private TableColumn<personne, Integer> Colid;
 
     @FXML
-    private TableColumn<personne, String> ColNom;
+    private Button ChooseFile;
+
+
+
+    private Image image;
+    String imagePath = null;
 
     @FXML
-    private TableColumn<personne, String> ColPrenom;
-
-    @FXML
-    private TableColumn<personne, String> ColEmail;
-
-    @FXML
-    private TableColumn<personne, String> ColMdp;
-
-    @FXML
-    private TableColumn<personne, String> ColDate;
-
-    @FXML
-    private TableColumn<personne, String> ColTele;
-
-    @FXML
-    private TableColumn<personne, String> ColStatus;
-
-
-
-
+    private CheckBox txtCheck;
 
     Connection con = null;
     PreparedStatement preparedStatement = null;
     ResultSet resultSet = null;
+    personne formation = null;
+    String query=null;
 
     public GestionUserController() {
         con = database.getConn();
     }
+    final ObservableList<personne> dataList = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        ServicePersonne sp = new ServicePersonne();
+        personne p = new personne();
 
-        showPersonne();
+      //  showPersonne();
+
         txtStatus.getItems().addAll("Admin", "Membre");
         txtStatus.getSelectionModel().select("Membre");
-    }
+
+        TableColumn Colid = new TableColumn("id_user ");
+        Colid.setCellValueFactory(new PropertyValueFactory<>("id_user"));
+
+        TableColumn ColNom = new TableColumn("nom ");
+        ColNom.setCellValueFactory(new PropertyValueFactory<>("nom"));
+
+        TableColumn ColPrenom = new TableColumn("Prenom ");
+        ColPrenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+
+        TableColumn ColEmail = new TableColumn("Email");
+        ColEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+
+        TableColumn ColMdp = new TableColumn("Mot de passe");
+        ColMdp.setCellValueFactory(new PropertyValueFactory<>("mdp"));
+
+        TableColumn ColDate = new TableColumn("Date");
+        ColDate.setCellValueFactory(new PropertyValueFactory<>("date_naissance"));
+
+        TableColumn ColTele = new TableColumn("Telephone");
+        ColTele.setCellValueFactory(new PropertyValueFactory<>("telephone"));
+
+        TableColumn ColStatus = new TableColumn("Status");
+        ColStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+        TableColumn ColIamge = new TableColumn("Image");
+        ColIamge.setCellValueFactory(new PropertyValueFactory<>("image"));
+
+        TableColumn ColCheck = new TableColumn("Etat");
+        ColCheck.setCellValueFactory(new PropertyValueFactory<>("etat"));
+
+        Callback<TableColumn<personne, String>, TableCell<personne, String>> cellFactoryModifier
+                = //
+                new Callback<TableColumn<personne, String>, TableCell<personne, String>>() {
+                    @Override
+                    public TableCell call(final TableColumn<personne, String> param) {
+                        final TableCell<personne, String> cell = new TableCell<personne, String>() {
+                            final CheckBox Etat = new CheckBox("Bannir");
+
+                            @Override
+                            public void updateItem(String item, boolean empty) {
+                                super.updateItem(item, empty);
+                                if (empty) {
+                                    setGraphic(null);
+                                    setText(null);
+                                } else {
+                                    if (Etat.isSelected()) {
+                                        p.getEtat(Etat.getText());
+                                    } else {
+                                        p.setEtat(null);
+                                        // or "" instead of null, depending on what you need
+                                    }
+
+                                    setGraphic(Etat);
+                                    setText(null);
+                                    }
+                            }
+                        };
+                        return cell;
+                    }
+                };
 
 
-    private void clearFields() {
-        txtFirstname.clear();
-        txtLastname.clear();
-        txtEmail.clear();
-        txtMdp.clear();
-        txtTelephone.clear();
-    }
 
-    public ObservableList<personne> getPersonneList(){
-      ObservableList<personne> PersonneList = FXCollections.observableArrayList();
-      Connection conn = database.getConn();
-      String query = "SELECT * FROM personne";
-      Statement st;
-      ResultSet rs;
 
-      try{
-          st = conn.createStatement();
-          rs = st.executeQuery(query);
-          personne personne;
-          while(rs.next()){
-               personne = new personne(rs.getInt("id_user"),rs.getString("nom"),rs.getString("prenom"),rs.getString("email"),rs.getString("mdp"),rs.getString("date_naissance"),rs.getString("telephone"),rs.getString("status"));
-               PersonneList.add(personne);
-          }
-            }catch(Exception ex){
-                ex.printStackTrace();
-            }
-            return PersonneList;
+        ColCheck.setCellFactory(cellFactoryModifier);
+
+
+        tblData.getColumns().add(Colid);
+        tblData.getColumns().add(ColNom);
+        tblData.getColumns().add(ColPrenom);
+        tblData.getColumns().add(ColEmail);
+        tblData.getColumns().add(ColMdp);
+        tblData.getColumns().add(ColDate);
+        tblData.getColumns().add(ColTele);
+        tblData.getColumns().add(ColStatus);
+        tblData.getColumns().add(ColIamge);
+        tblData.getColumns().add(ColCheck);
 
 
 
-    }
 
 
-
-    public void showPersonne(){
-      ObservableList<personne> list = getPersonneList();
-
-      Colid.setCellValueFactory(new PropertyValueFactory<personne, Integer>("id_user"));
-      ColNom.setCellValueFactory(new PropertyValueFactory<personne, String>("nom"));
-      ColPrenom.setCellValueFactory(new PropertyValueFactory<personne, String>("prenom"));
-      ColEmail.setCellValueFactory(new PropertyValueFactory<personne, String>("email"));
-      ColMdp.setCellValueFactory(new PropertyValueFactory<personne, String>("mdp"));
-      ColDate.setCellValueFactory(new PropertyValueFactory<personne, String>("date_naissance"));
-      ColTele.setCellValueFactory(new PropertyValueFactory<personne, String>("telephone"));
-      ColStatus.setCellValueFactory(new PropertyValueFactory<personne, String>("status"));
-      tblData.setItems(list);
-
-    }
-
-    @FXML
-    private void HandleEvents(MouseEvent event) {
-        int index = -1;
-        index = tblData.getSelectionModel().getSelectedIndex();
-        if (index <= -1){
-
-            return;
+        List<personne> list = null;
+        try {
+            list = sp.read();
+            System.out.println(list);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        txtFirstname.setText(ColNom.getCellData(index).toString());
-        txtLastname.setText(ColPrenom.getCellData(index).toString());
-        txtEmail.setText(ColEmail.getCellData(index).toString());
-        txtMdp.setText(ColMdp.getCellData(index).toString());
-        txtTelephone.setText(ColTele.getCellData(index).toString());
-        txtDOB.setValue(LocalDate.parse(String.valueOf(ColDate.getCellData(index).toString())));
-        txtStatus.setValue(ColStatus.getCellData(index).toString());
+        for (personne personne : list) {
+            tblData.getItems().add(personne);
+        }
 
     }
 
-    @FXML
-    private void HandleEvents1(MouseEvent event){
-        if (txtEmail.getText().isEmpty() || txtFirstname.getText().isEmpty() || txtLastname.getText().isEmpty() || txtDOB.getValue().equals(null) || txtMdp.getText().isEmpty() || txtTelephone.getText().isEmpty() ) {
-            lblStatus.setTextFill(Color.TOMATO);
-            lblStatus.setText("Enter all details");
-        } else {
+    private void executeQuery(String query) {
+        Connection conn = database.getConn();
+        Statement st;
+        try{
+            st = conn.createStatement();
+            st.executeUpdate(query);
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+    }
+
+
+    public void modifier(javafx.event.ActionEvent event) {
+        String query = "UPDATE personne SET nom = '"+txtFirstname.getText()+"', prenom = '"+txtLastname.getText()+"', email = '"+txtEmail.getText()+"',mdp = '"+txtMdp.getText()+"', date_naissance = '"+txtDOB.getValue().toString()+ "',telephone = '"+txtTelephone.getText()+"',status = '"+txtStatus.getValue()+"',image = '"+imagePath+"',etat='"+txtCheck.isSelected()+"' WHERE id_user = "+txtId.getText()+" ";
+        executeQuery(query);
+        clearFields();
+
+    }
+
+  /*  @FXML
+    private void HandleEvents1(MouseEvent event) {
+        //check if not empty
+
             ServicePersonne sp= new ServicePersonne();
             try{
                 personne p1= new personne();
@@ -181,11 +234,12 @@ public class GestionUserController implements Initializable {
                 p1.setDate_naissance(txtDOB.getValue().toString());
                 p1.setTelephone(txtTelephone.getText());
                 p1.setStatus(txtStatus.getValue().toString());
-                sp.update(p1);
+                p1.setImage(imagePath);
+                p1.setEtat(check);
+                sp.add(p1);
                 lblStatus.setTextFill(Color.GREEN);
-                lblStatus.setText("Update Successfully");
+                lblStatus.setText("Added Successfully");
                 clearFields();
-                showPersonne();
 
             }catch (Exception e){
                 System.out.println(e.getMessage());
@@ -193,25 +247,98 @@ public class GestionUserController implements Initializable {
                 lblStatus.setText(e.getMessage());
             }
         }
+    }*/
+    private void clearFields() {
+        txtId.clear();
+        txtFirstname.clear();
+        txtLastname.clear();
+        txtEmail.clear();
+        txtMdp.clear();
+        txtDOB.setValue(null);
+        txtTelephone.clear();
+        txtStatus.getSelectionModel().clearAndSelect(1);
+    }
+
+
+    @FXML
+    private void HandleEvents(MouseEvent event) {
+
+        personne q = tblData.getSelectionModel().getSelectedItem();
+        System.out.println("id_user" + q.getId_user());txtId.setText(String.valueOf(q.getId_user()));
+        System.out.println("nom" + q.getNom());txtFirstname.setText(String.valueOf(q.getNom()));
+        System.out.println("prenom" + q.getPrenom());txtLastname.setText(String.valueOf(q.getPrenom()));
+        System.out.println("email" + q.getEmail());txtEmail.setText(String.valueOf(q.getEmail()));
+        System.out.println("mdp" + q.getMdp());txtMdp.setText(String.valueOf(q.getMdp()));
+        System.out.println("telephone" + q.getTelephone());txtTelephone.setText(String.valueOf(q.getTelephone()));
+        System.out.println("status" + q.getStatus());txtStatus.getSelectionModel().select(1);
+        System.out.println("etat" + q.getEtat());txtCheck.isSelected();
+
+        Image image = new Image("file:///"+tblData.getSelectionModel().getSelectedItem().getImage());
+        userImage.setImage(image);
+        imagePath=tblData.getSelectionModel().getSelectedItem().getImage();
+
+
+
+
     }
 
 
 
+    public String ChooseFile(ActionEvent event) throws IOException {
+
+        FileChooser fc = new FileChooser();
 
 
-    private void executeQuery(String query) {
-      Connection conn = database.getConn();
-      Statement st;
-       try{
-           st = conn.createStatement();
-           st.executeUpdate(query);
-       }catch(Exception ex){
-          ex.printStackTrace();
-       }
+        fc.setInitialDirectory(new java.io.File("C:\\Users\\Ala Hamed\\Desktop\\AuthentificationV1.2\\src\\image"));
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.png"));
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.jpg"));
+
+        java.io.File f = fc.showOpenDialog(null);
+        if(f != null)
+        {
+            System.out.println(f);
+        }
+        imagePath=f.getPath();
+        imagePath =imagePath.replace("\\","\\\\");
+        return f.getName();
+
+
     }
 
 
-    }
+  /*  @FXML
+    void refresh() {
+        try {
+            getPersonneList();
+
+            query = "SELECT * FROM personne";
+            preparedStatement = con.prepareStatement(query);
+            resultSet = preparedStatement.executeQuery();
+            List<personne> ls = null;
+
+            while (resultSet.next()){
+                ls.add(new personne(
+                        resultSet.getInt("id_user"),
+                        resultSet.getString("nom"),
+                        resultSet.getString("prenom"),
+                        resultSet.getString("email"),
+                        resultSet.getString("mdp"),
+                        resultSet.getString("telephone"),
+                        resultSet.getString("status"),
+                        resultSet.getDate("date_naissance"),
+                        resultSet.getString("image")
+
+
+                        ));
+                tblData.setItems((ObservableList<personne>) ls);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(GestionUserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+    }*/
+}
 
 
 

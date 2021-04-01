@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="602.0" prefWidth="1093.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GestionUserController">
+<AnchorPane prefHeight="602.0" prefWidth="1585.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GestionUserController">
    <children>
       <Pane layoutX="-10.0" prefHeight="602.0" prefWidth="413.0" style="-fx-background-color: #696969;">
          <children>
@@ -32,27 +32,21 @@
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="txtFirstname" layoutX="75.0" layoutY="132.0" prefHeight="32.0" prefWidth="278.0" promptText="firstname" />
-            <TextField fx:id="txtLastname" layoutX="75.0" layoutY="181.0" prefHeight="32.0" prefWidth="278.0" promptText="lastname" />
-            <TextField fx:id="txtEmail" layoutX="75.0" layoutY="224.0" prefHeight="32.0" prefWidth="278.0" promptText="email" />
-            <DatePicker fx:id="txtDOB" layoutX="75.0" layoutY="323.0" prefHeight="32.0" prefWidth="278.0" promptText="dob" />
-            <ComboBox fx:id="txtStatus" editable="true" layoutX="76.0" layoutY="425.0" prefHeight="32.0" prefWidth="278.0" promptText="gender" />
-            <TextField fx:id="txtTelephone" layoutX="76.0" layoutY="373.0" prefHeight="32.0" prefWidth="278.0" promptText="telephone" />
-            <TextField fx:id="txtMdp" layoutX="75.0" layoutY="272.0" prefHeight="32.0" prefWidth="278.0" promptText="mdp" />
-            <Button fx:id="btnUpdate" layoutX="76.0" layoutY="485.0" mnemonicParsing="false" onMouseClicked="#HandleEvents1" prefHeight="23.0" prefWidth="278.0" style="-fx-background-color: #FF0000;" styleClass="button2" text="Update" />
+            <TextField fx:id="txtFirstname" layoutX="75.0" layoutY="161.0" prefHeight="32.0" prefWidth="278.0" promptText="firstname" />
+            <TextField fx:id="txtLastname" layoutX="75.0" layoutY="207.0" prefHeight="32.0" prefWidth="278.0" promptText="lastname" />
+            <TextField fx:id="txtEmail" layoutX="75.0" layoutY="249.0" prefHeight="32.0" prefWidth="278.0" promptText="email" />
+            <DatePicker fx:id="txtDOB" layoutX="75.0" layoutY="325.0" prefHeight="32.0" prefWidth="278.0" promptText="dob" />
+            <ComboBox fx:id="txtStatus" editable="true" layoutX="75.0" layoutY="421.0" prefHeight="32.0" prefWidth="278.0" promptText="gender" />
+            <TextField fx:id="txtTelephone" layoutX="75.0" layoutY="371.0" prefHeight="32.0" prefWidth="278.0" promptText="telephone" />
+            <TextField fx:id="txtMdp" layoutX="75.0" layoutY="285.0" prefHeight="32.0" prefWidth="278.0" promptText="mdp" />
+            <Button fx:id="btnUpdate" layoutX="75.0" layoutY="557.0" mnemonicParsing="false" onAction="#modifier" prefHeight="23.0" prefWidth="278.0" style="-fx-background-color: #FF0000;" styleClass="button2" text="Update" />
+            <TextField fx:id="txtId" layoutX="75.0" layoutY="115.0" prefHeight="32.0" prefWidth="278.0" promptText="ID" />
+            <Button fx:id="ChooseFile" layoutX="75.0" layoutY="519.0" mnemonicParsing="false" onAction="#ChooseFile" prefHeight="21.0" prefWidth="278.0" style="-fx-background-color: #FF0000;" styleClass="button2" text="choose File" />
+            <CheckBox fx:id="txtCheck" layoutX="75.0" layoutY="477.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="278.0" text="Bannir" />
          </children>
       </Pane>
       <Label fx:id="lblStatus" layoutX="447.0" layoutY="32.0" prefHeight="32.0" prefWidth="354.0" text="Status :" />
-      <TableView fx:id="tblData" layoutX="447.0" layoutY="80.0" onMouseClicked="#HandleEvents" prefHeight="478.0" prefWidth="603.0">
-         <columns>
-            <TableColumn fx:id="Colid" prefWidth="75.0" text="id_user" />
-            <TableColumn fx:id="ColNom" prefWidth="75.0" text="nom" />
-            <TableColumn fx:id="ColPrenom" prefWidth="75.0" text="prenom" />
-            <TableColumn fx:id="ColEmail" prefWidth="75.0" text="E-mail" />
-            <TableColumn fx:id="ColMdp" prefWidth="75.0" text="Mdp" />
-            <TableColumn fx:id="ColDate" prefWidth="75.0" text="date_Nais" />
-            <TableColumn fx:id="ColTele" prefWidth="75.0" text="Telephone" />
-            <TableColumn fx:id="ColStatus" prefWidth="75.0" text="Status" />
-         </columns></TableView>
+      <TableView fx:id="tblData" layoutX="447.0" layoutY="80.0" onMouseClicked="#HandleEvents" prefHeight="478.0" prefWidth="831.0" />
+      <ImageView fx:id="userImage" fitHeight="194.0" fitWidth="125.0" layoutX="1446.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

@@ -1,13 +1,18 @@
 package gui;
 
 import Entites.personne;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
 import services.ServicePersonne;
 import utils.database;
+
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,6 +21,9 @@ import java.util.ResourceBundle;
 
 
 public class FormulaireController implements Initializable{
+
+    @FXML
+    private AnchorPane anchorpane;
 
     @FXML
     private TextField txtFirstname;
@@ -44,8 +52,11 @@ public class FormulaireController implements Initializable{
     @FXML
     private Label lblStatus;
 
+    @FXML
+    private Button choosefile;
 
 
+    String imagePath = null;
     Connection con = null;
     PreparedStatement preparedStatement = null;
     ResultSet resultSet = null;
@@ -76,6 +87,8 @@ public class FormulaireController implements Initializable{
                 p1.setDate_naissance(txtDOB.getValue().toString());
                 p1.setTelephone(txtTelephone.getText());
                 p1.setStatus(txtStatus.getValue().toString());
+                p1.setImage(imagePath);
+                p1.setEtat(null);
                 sp.add(p1);
                 lblStatus.setTextFill(Color.GREEN);
                 lblStatus.setText("Added Successfully");
@@ -96,5 +109,29 @@ public class FormulaireController implements Initializable{
         txtMdp.clear();
         txtTelephone.clear();
     }
+
+    public String filechosser(ActionEvent event) throws IOException {
+
+        FileChooser fc = new FileChooser();
+
+
+        fc.setInitialDirectory(new java.io.File("C:\\Users\\Ala Hamed\\Desktop\\AuthentificationV1.2\\src\\image"));
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.png"));
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.JPG"));
+
+        java.io.File f = fc.showOpenDialog(null);
+        if(f != null)
+        {
+            System.out.println(f);
+        }
+        imagePath=f.getPath();
+        imagePath =imagePath.replace("\\","\\\\");
+        return f.getName();
+
+
+    }
+
+
+
 
 }

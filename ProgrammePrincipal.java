@@ -6,6 +6,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+
+import javax.swing.*;
+import java.applet.AudioClip;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 
 public class ProgrammePrincipal extends Application {
 
@@ -22,6 +30,11 @@ public class ProgrammePrincipal extends Application {
     }
 
 
-    public static void main(String[] args) { launch(args);   }
+    public static void main(String[] args) {
+        launch(args);
+
+    }
+
+
 
 }

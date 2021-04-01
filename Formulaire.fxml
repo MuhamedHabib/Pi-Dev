@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="575.0" prefWidth="428.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FormulaireController">
+<AnchorPane fx:id="anchorpane" prefHeight="575.0" prefWidth="428.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FormulaireController">
    <children>
       <Pane prefHeight="575.0" prefWidth="429.0" style="-fx-background-color: #696969;">
          <children>
@@ -33,12 +34,13 @@
             <TextField fx:id="txtFirstname" layoutX="75.0" layoutY="132.0" prefHeight="32.0" prefWidth="278.0" promptText="firstname" />
             <TextField fx:id="txtLastname" layoutX="75.0" layoutY="181.0" prefHeight="32.0" prefWidth="278.0" promptText="lastname" />
             <TextField fx:id="txtEmail" layoutX="75.0" layoutY="224.0" prefHeight="32.0" prefWidth="278.0" promptText="email" />
+            <PasswordField fx:id="txtMdp" layoutX="76.0" layoutY="272.0" prefHeight="31.0" prefWidth="278.0" promptText="Mdp" />
+            <TextField fx:id="txtTelephone" layoutX="75.0" layoutY="320.0" prefHeight="32.0" prefWidth="278.0" promptText="telephone" />
             <DatePicker fx:id="txtDOB" layoutX="76.0" layoutY="373.0" prefHeight="32.0" prefWidth="278.0" promptText="dob" />
             <ComboBox fx:id="txtStatus" editable="true" layoutX="76.0" layoutY="425.0" prefHeight="32.0" prefWidth="278.0" promptText="gender" />
-            <TextField fx:id="txtTelephone" layoutX="75.0" layoutY="320.0" prefHeight="32.0" prefWidth="278.0" promptText="telephone" />
-            <TextField fx:id="txtMdp" layoutX="75.0" layoutY="272.0" prefHeight="32.0" prefWidth="278.0" promptText="mdp" />
-            <Button fx:id="btnSave" layoutX="75.0" layoutY="510.0" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefHeight="23.0" prefWidth="278.0" style="-fx-background-color: #FF0000;" styleClass="button2" text="Save" />
-            <Label fx:id="lblStatus" alignment="CENTER" layoutX="37.0" layoutY="478.0" prefHeight="23.0" prefWidth="354.0" />
+            <Button fx:id="btnSave" layoutX="75.0" layoutY="535.0" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefHeight="23.0" prefWidth="278.0" style="-fx-background-color: #FF0000;" styleClass="button2" text="Save" />
+            <Label fx:id="lblStatus" alignment="CENTER" layoutX="37.0" layoutY="470.0" prefHeight="23.0" prefWidth="354.0" />
+            <Button fx:id="choosefile" layoutX="75.0" layoutY="493.0" mnemonicParsing="false" onAction="#filechosser" prefHeight="25.0" prefWidth="278.0" text="chooseFile" />
          </children>
       </Pane>
    </children>

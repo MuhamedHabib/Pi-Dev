@@ -5,6 +5,8 @@
  */
 package Intservice;
 
+import Entites.personne;
+
 import java.sql.SQLException;
 import java.util.List;
 
@@ -17,5 +19,5 @@ public interface IService <T> {
     void delete(T t) throws SQLException;
 
 
-
+    personne findById(int id);
 }
